@@ -34,4 +34,4 @@ define( 'DB_CHARSET', 'utf8' );
 define( 'DEBUG', true );
 
 // Carrega o loader
-require_once ABSPATH . '/loader.php';
+require_once ABSPATH . '/init.php';

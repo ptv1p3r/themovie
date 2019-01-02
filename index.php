@@ -1,4 +1,4 @@
 <?php
-    phpinfo ();
+    //phpinfo ();
     require_once 'config.php';
-?>
+
