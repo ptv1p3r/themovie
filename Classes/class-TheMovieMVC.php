@@ -30,7 +30,7 @@ class TheMovieMVC
      * Receberá o valor da ação (Também vem da URL):
      * exemplo.com/controlador/acao
      *
-     * @access private
+     * @access privates
      */
     private $acao;
 
