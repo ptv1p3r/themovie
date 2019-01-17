@@ -6,12 +6,9 @@
  * Time: 20:10
  */
 /**
- * home - Controller de exemplo
- *
- * @package TutsupMVC
- * @since 0.1
+ * home - Controller
  */
-class HomeController extends MainController
+class HomeController extends TheMovieMVC
 {
 
     /**

@@ -26,3 +26,7 @@ if ( ! defined('DEBUG') || DEBUG === false ) {
     ini_set("display_errors", 1);
 
 }
+
+require_once ABSPATH . '/Classes/classTheMovieMVC.php';
+
+$_AppMovie = new TheMovieMVC();

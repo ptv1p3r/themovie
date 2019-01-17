@@ -8,18 +8,20 @@
 
 // Caminho para a raiz
 define( 'ABSPATH', dirname( __FILE__ ) );
+//define( 'ABSPATH', dirname(dirname(__FILE__)) . '/' );
+
 
 // Caminho para a pasta de uploads
 define( 'UP_ABSPATH', ABSPATH . '/views/_uploads' );
 
 // URL da home
-define( 'HOME_URI', 'http://127.0.0.1/themovie' );
+define( 'HOME_URI', 'http://127.0.0.1' );
 
 // Nome do host da base de dados
 define( 'HOSTNAME', 'localhost' );
 
 // Nome do DB
-define( 'DB_NAME', 'themovie' );
+define( 'DB_NAME', 'movie' );
 
 // Utilizador do DB
 define( 'DB_USER', 'root' );

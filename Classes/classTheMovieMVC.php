@@ -72,7 +72,7 @@ class TheMovieMVC
         if ( ! $this->controlador ) {
 
             // Adiciona o controlador padrão
-            require_once ABSPATH . '/controllers/home-controller.php';
+            require_once ABSPATH . '/Controllers/home-controller.php';
 
             // Cria o objeto do controlador "home-controller.php"
             // Este controlador deverá ter uma classe chamada HomeController
