@@ -6,9 +6,9 @@
  * Time: 20:10
  */
 /**
- * home - Controller
+ * home - Controller2
  */
-class HomeController extends TheMovieMVC
+class HomeController
 {
 
     /**

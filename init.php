@@ -5,12 +5,12 @@
  * Date: 21/11/2018
  * Time: 22:33
  */
-
+ini_set("memory_limit",-1);
 // Evita acesso directo
 if ( ! defined('ABSPATH')) exit;
 
 // Inicia a sessão
-session_start();
+//session_start();
 
 // Verifica debug
 if ( ! defined('DEBUG') || DEBUG === false ) {
@@ -27,6 +27,6 @@ if ( ! defined('DEBUG') || DEBUG === false ) {
 
 }
 
-require_once ABSPATH . '/Classes/classTheMovieMVC.php';
+require_once ABSPATH . '\Classes\classTheMovieMVC.php';
 
 $_AppMovie = new TheMovieMVC();
