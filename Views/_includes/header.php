@@ -12,7 +12,7 @@
 
 <head>
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <title>Test</title>
+    <title><?php echo $this->title?></title>
 </head>
 
 <body>

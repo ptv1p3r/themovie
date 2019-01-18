@@ -27,6 +27,6 @@ if ( ! defined('DEBUG') || DEBUG === false ) {
 
 }
 
-require_once ABSPATH . '\Classes\classTheMovieMVC.php';
+require_once ABSPATH . '/Classes/classTheMovieMVC.php';
 
 $_AppMovie = new TheMovieMVC();

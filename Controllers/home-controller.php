@@ -6,7 +6,7 @@
  * Time: 20:10
  */
 /**
- * home - Controller2
+ * home - Controller
  */
 class HomeController
 {
@@ -37,6 +37,6 @@ class HomeController
         // /views/_includes/footer.php
         require ABSPATH . '/views/_includes/footer.php';
 
-    } // index
+    }
 
-} // class HomeController
+}

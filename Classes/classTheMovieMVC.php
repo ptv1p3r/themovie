@@ -72,12 +72,11 @@ class TheMovieMVC
         if ( ! $this->controlador ) {
 
             // Adiciona o controlador padrão
-            require_once ABSPATH . '\Controllers\home-controller.php';
+            require_once ABSPATH . '/Controllers/home-controller.php';
 
             // Cria o objeto do controlador "home-controller.php"
-            // Este controlador deverá ter uma classe chamada HomeController
-            //$this->controlador = new HomeController();
             $this->controlador = new HomeController();
+
             // Executa o método index()
             $this->controlador->index();
 
@@ -96,7 +95,7 @@ class TheMovieMVC
         }
 
         // Inclui o arquivo do controlador
-        require_once ABSPATH . '/controllers/' . $this->controlador . '.php';
+        require_once ABSPATH . '/Controllers/' . $this->controlador . '.php';
 
         // Remove caracteres inválidos do nome do controlador para gerar o nome
         // da classe. Se o arquivo chamar "news-controller.php", a classe deverá
@@ -108,9 +107,8 @@ class TheMovieMVC
             // Página não encontrada
             require_once ABSPATH . $this->not_found;
 
-            // FIM :)
             return;
-        } // class_exists
+        }
 
         // Cria o objeto da classe do controlador e envia os parâmetros
         $this->controlador = new $this->controlador( $this->parametros );
@@ -119,24 +117,21 @@ class TheMovieMVC
         if ( method_exists( $this->controlador, $this->acao ) ) {
             $this->controlador->{$this->acao}( $this->parametros );
 
-            // FIM :)
             return;
-        } // method_exists
+        }
 
         // Sem ação, chamamos o método index
         if ( ! $this->acao && method_exists( $this->controlador, 'index' ) ) {
             $this->controlador->index( $this->parametros );
 
-            // FIM :)
             return;
         } // ! $this->acao
 
         // Página não encontrada
         require_once ABSPATH . $this->not_found;
 
-        // FIM :)
         return;
-    } // __construct
+    }
 
     /**
      * Obtém parâmetros de $_GET['path']
@@ -186,6 +181,6 @@ class TheMovieMVC
             // echo '</pre>';
         }
 
-    } // get_url_data
+    }
 
 }
