@@ -46,7 +46,7 @@ $movies = array(
         <tr>
             <?php foreach ($movies as $movie) { ?>
                 <td align="center">
-                    <img src="images/<?php echo $movie["img"]; ?>.png" href="#" height="256" width="192">
+                    <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
                 </td>
             <?php } ?>
@@ -65,7 +65,7 @@ $movies = array(
         <tr>
             <?php foreach ($movies as $movie) { ?>
                 <td align="center">
-                    <img src="images/<?php echo $movie["img"]; ?>.png" href="#" height="256" width="192">
+                    <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
                 </td>
             <?php } ?>
@@ -84,7 +84,7 @@ $movies = array(
         <tr>
             <?php foreach ($movies as $movie) { ?>
                 <td align="center">
-                    <img src="images/<?php echo $movie["img"]; ?>.png" href="#" height="256" width="192">
+                    <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
                 </td>
             <?php } ?>
