@@ -140,7 +140,7 @@ class TheMovieMVC
      * $this->controlador, $this->acao e $this->parametros
      *
      * A URL deverá ter o seguinte formato:
-     * http://www.example.com/controlador/acao/parametro1/parametro2/etc...
+     * http://localhost/controlador/acao/parametro1/parametro2/etc...
      */
     public function get_url_data () {
 
