@@ -17,7 +17,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark justify-content-end">
+<nav class="navbar navbar-expand-sm bg-dark">
 
     <!-- left side of navbar -->
     <div class="navbar-collapse">
