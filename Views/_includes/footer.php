@@ -8,7 +8,8 @@
 
 ?>
 
-<p align="center">Copyright ISMAT &copy;<?php echo date('Y');?> - SIM - Pedro Roldan, Leandro Moreira, Rubén Lourenço</p>
+<p style="font-size: 12px" align="center">Copyright ISMAT &copy;<?php echo date('Y');?> -
+    SIM - Pedro Roldan, Leandro Moreira, Rubén Lourenço</p>
 
 </body>
 </html>
