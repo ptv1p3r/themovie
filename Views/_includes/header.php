@@ -23,11 +23,11 @@
     <div class="navbar-collapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="navbar-brand" href="../../init.php"><img src="../../Images/home.png" alt="Home" width="24" height="24"></a>
+                <a class="navbar-brand"><img src="../../Images/home.png" alt="Home" width="24" height="24" href="#"></a>
             </li>
 
             <li class="nav-item">
-                <a class="navbar-brand" href="../../init.php"><img src="../../Images/name.png" alt="Name" height="24"></a>
+                <a class="navbar-brand"><img src="../../Images/name.png" alt="Name" height="24"href="#"></a>
             </li>
         </ul>
 
@@ -36,7 +36,7 @@
             <li class="nav-item">
                 <form class="form-inline" action="">
                     <input class="form-control mr-sm-2" type="text" placeholder="Quick Search">
-                    <img src="../../Images/search.png" alt="" width="24" height="24">
+                    <img src="../../Images/search.png" alt="" width="24" height="24" href="#">
                 </form>
             </li>
         </ul>
