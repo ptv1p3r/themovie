@@ -17,17 +17,19 @@
 
 <body>
 
-<nav class="navbar navbar-expand-sm bg-dark">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
     <!-- left side of navbar -->
-    <div class="navbar-collapse">
+    <div class="navbar-collapse ">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="navbar-brand"><img src="../../Images/home.png" alt="Home" width="24" height="24" href="#"></a>
+                <a class="navbar-brand" href="#">
+                <img src="../../Images/home.png" alt="Home" width="24" height="24"> </a>
             </li>
 
             <li class="nav-item">
-                <a class="navbar-brand"><img src="../../Images/name.png" alt="Name" height="24"href="#"></a>
+                <a class="navbar-brand" href="#">
+                    <img src="../../Images/name.png" alt="Name" height="24"></a>
             </li>
         </ul>
 
@@ -36,7 +38,7 @@
             <li class="nav-item">
                 <form class="form-inline" action="">
                     <input class="form-control mr-sm-2" type="text" placeholder="Quick Search">
-                    <img src="../../Images/search.png" alt="" width="24" height="24" href="#">
+                    <a class="navbar-brand" href="#"><img src="../../Images/search.png" alt="Search" width="24" height="24"></a>
                 </form>
             </li>
         </ul>
