@@ -10,24 +10,28 @@
 $movies = array(
 
     array(
+        "id"	=> "123",
         "name"	=> "Movie 1",
         "img"	=> "movie1",
         "year"  => "2018"
     ),
 
     array(
+        "id"	=> "456",
         "name"	=> "Movie 2",
         "img"	=> "movie2",
         "year"  => "2018"
     ),
 
     array(
+        "id"	=> "789",
         "name"	=> "Movie 3",
         "img"	=> "movie3",
         "year"  => "2018"
     ),
 
     array(
+        "id"	=> "0258",
         "name"	=> "Movie 4",
         "img"	=> "movie4",
         "year"  => "2018"
@@ -48,6 +52,7 @@ $movies = array(
                 <td align="center">
                     <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["id"];?>">Detail</a>
                 </td>
             <?php } ?>
         </tr>

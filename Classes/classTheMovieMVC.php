@@ -9,7 +9,6 @@
  * TheMovieMVC - Gerencia Models, Controllers e Views
  *
  * @package TheMovieMVC
- * @since 0.1
  */
 class TheMovieMVC
 {
@@ -17,8 +16,8 @@ class TheMovieMVC
     /**
      * $controlador
      *
-     * Receberá o valor do controlador (Vindo da URL).
-     * exemplo.com/controlador/
+     * valor do controlador (Vindo da URL).
+     * localhost/controlador/
      *
      * @access private
      */
@@ -27,18 +26,18 @@ class TheMovieMVC
     /**
      * $acao
      *
-     * Receberá o valor da ação (Também vem da URL):
-     * exemplo.com/controlador/acao
+     * valor da ação (Também vem da URL):
+     * localhost/controlador/acao
      *
-     * @access privates
+     * @access private
      */
     private $acao;
 
     /**
      * $parametros
      *
-     * Receberá um array dos parâmetros (Também vem da URL):
-     * exemplo.com/controlador/acao/param1/param2/param50
+     * array dos parâmetros (Também vem da URL):
+     * localhost/controlador/acao/param1/param2/param50
      *
      * @access private
      */
@@ -57,7 +56,7 @@ class TheMovieMVC
      * Construtor para essa classe
      *
      * Obtém os valores do controlador, ação e parâmetros. Configura
-     * o controlado e a ação (método).
+     * o controlador e a ação (método).
      */
     public function __construct () {
 
