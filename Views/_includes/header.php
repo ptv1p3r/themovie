@@ -28,7 +28,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="navbar-brand" href="<?php echo HOME_URI ;?>"">
+                <a class="navbar-brand" href="<?php echo HOME_URI ;?>">
                     <img src="../../Images/name.png" alt="Name" height="24"></a>
             </li>
         </ul>
