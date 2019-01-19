@@ -21,6 +21,8 @@ class DetailController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
+        print_r($parametros);
+
         // página não precisa de modelo
         $this->cssFile = ABSPATH . '/css/bootstrap.min.css';
 
