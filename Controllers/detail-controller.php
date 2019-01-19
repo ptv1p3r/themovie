@@ -10,7 +10,6 @@
  */
 class DetailController
 {
-
     /**
      * Carrega a página "/views/detail/detail-view.php"
      */
@@ -28,12 +27,10 @@ class DetailController
 
         /** Carrega os arquivos do view **/
 
-        // /views/_includes/header.php
         require ABSPATH . '/views/_includes/header.php';
 
         require ABSPATH . '/views/detail/detail-view.php';
 
-        // /views/_includes/footer.php
         require ABSPATH . '/views/_includes/footer.php';
 
     }

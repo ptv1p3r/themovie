@@ -26,16 +26,10 @@ class HomeController
 
         /** Carrega os arquivos do view **/
 
-        // /views/_includes/header.php
         require ABSPATH . '/views/_includes/header.php';
 
-        // /views/_includes/menu.php
-        //require ABSPATH . '/views/_includes/menu.php';
-
-        // /views/home/home-view.php
         require ABSPATH . '/views/home/home-view.php';
 
-        // /views/_includes/footer.php
         require ABSPATH . '/views/_includes/footer.php';
 
     }
