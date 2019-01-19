@@ -22,16 +22,6 @@ class MainController
     public $db;
 
     /**
-     * $phpass
-     *
-     * Classe phpass
-     *
-     * @see http://www.openwall.com/phpass/
-     * @access public
-     */
-    public $phpass;
-
-    /**
      * $title
      *
      * Título das páginas
@@ -57,10 +47,6 @@ class MainController
 
         // Instancia do DB
         $this->db = new TheMovieDB();
-
-       // print_r($this->db);
-        // Phpass
-        //$this->phpass = new PasswordHash(8, false);
 
         // Parâmetros
         $this->parametros = $parametros;
