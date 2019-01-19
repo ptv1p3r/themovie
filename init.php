@@ -10,7 +10,7 @@
 if ( ! defined('ABSPATH')) exit;
 
 // Inicia a sessão
-//session_start();
+session_start();
 
 // Verifica debug
 if ( ! defined('DEBUG') || DEBUG === false ) {
@@ -29,6 +29,7 @@ if ( ! defined('DEBUG') || DEBUG === false ) {
 
 require_once ABSPATH . '/Includes/global-functions.php';
 require_once ABSPATH . '/Classes/classMainController.php';
+require_once ABSPATH . '/Classes/classTheMovieDB.php';
 require_once ABSPATH . '/Classes/classTheMovieMVC.php';
 
 $_AppMovie = new TheMovieMVC();

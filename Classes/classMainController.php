@@ -15,7 +15,7 @@ class MainController
     /**
      * $db
      *
-     * Nossa conexão com a base de dados. Manterá o objeto PDO
+     * base de dados. objeto PDO
      *
      * @access public
      */
@@ -41,24 +41,6 @@ class MainController
     public $title;
 
     /**
-     * $login_required
-     *
-     * Se a página precisa de login
-     *
-     * @access public
-     */
-    public $login_required = false;
-
-    /**
-     * $permission_required
-     *
-     * Permissão necessária
-     *
-     * @access public
-     */
-    public $permission_required = 'any';
-
-    /**
      * $parametros
      *
      * @access public
@@ -74,8 +56,9 @@ class MainController
     public function __construct ( $parametros = array() ) {
 
         // Instancia do DB
-        //$this->db = new TheMovieDB();
+        $this->db = new TheMovieDB();
 
+       // print_r($this->db);
         // Phpass
         //$this->phpass = new PasswordHash(8, false);
 
@@ -87,7 +70,7 @@ class MainController
     /**
      * Load model
      *
-     * Carrega os modelos presentes na pasta /models/.
+     * Carrega os modelos presentes na pasta /Models/.
      *
      */
     public function load_model( $model_name = false ) {

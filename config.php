@@ -8,8 +8,6 @@
 
 // Caminho para a raiz
 define( 'ABSPATH', dirname( __FILE__ ) );
-//define( 'ABSPATH', dirname(dirname(__FILE__)) . '/' );
-
 
 // Caminho para a pasta de uploads
 //define( 'UP_ABSPATH', ABSPATH . '/views/_uploads' );
@@ -20,14 +18,17 @@ define( 'HOME_URI', 'http://127.0.0.1' );
 // Nome do host da base de dados
 define( 'HOSTNAME', 'localhost' );
 
+// Porta do host da base de dados
+define( 'HOSTPORT', '3306' );
+
 // Nome do DB
 define( 'DB_NAME', 'movie' );
 
 // Utilizador do DB
-define( 'DB_USER', 'movie' );
+define( 'DB_USER', 'root' );
 
 // Senha do DB
-define( 'DB_PASSWORD', 'movie' );
+define( 'DB_PASSWORD', '' );
 
 // Charset da conexão PDO
 define( 'DB_CHARSET', 'utf8' );
