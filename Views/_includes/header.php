@@ -6,6 +6,7 @@
  * Time: 22:55
  */
 ?>
+<?php if ( ! defined('ABSPATH')) exit; ?>
 
 <!DOCTYPE html>
 <html lang="en">

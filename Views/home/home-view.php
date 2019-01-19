@@ -38,6 +38,7 @@ $movies = array(
     )
 );
 ?>
+<?php if ( ! defined('ABSPATH')) exit; ?>
 
 <br>
 

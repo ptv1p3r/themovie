@@ -6,6 +6,7 @@
  * Time: 12:47
  */
 ?>
+<?php if ( ! defined('ABSPATH')) exit; ?>
 
 <div class="container" style="margin-top:30px">
     <div class="row">

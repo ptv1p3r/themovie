@@ -18,6 +18,9 @@ class HomeController extends MainController
         // Título da página
         $this->title = 'Home';
 
+        $modelo = $this->load_model('movie-model');
+        print_r( $modelo );
+
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
