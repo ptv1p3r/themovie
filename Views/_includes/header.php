@@ -23,12 +23,12 @@
     <div class="navbar-collapse ">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="<?php echo HOME_URI ;?>">
                 <img src="../../Images/home.png" alt="Home" width="24" height="24"> </a>
             </li>
 
             <li class="nav-item">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="<?php echo HOME_URI ;?>"">
                     <img src="../../Images/name.png" alt="Name" height="24"></a>
             </li>
         </ul>
