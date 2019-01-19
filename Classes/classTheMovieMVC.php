@@ -69,6 +69,7 @@ class TheMovieMVC
          * Verifica se o controlador existe. Caso contrário, adiciona o
          * controlador padrão (controllers/home-controller.php) e chama o método index().
          */
+
         if ( ! $this->controlador ) {
 
             // Adiciona o controlador padrão
@@ -80,17 +81,14 @@ class TheMovieMVC
             // Executa o método index()
             $this->controlador->index();
 
-            // FIM :)
             return;
-
         }
 
         // Se o arquivo do controlador não existir, não faremos nada
-        if ( ! file_exists( ABSPATH . '/controllers/' . $this->controlador . '.php' ) ) {
+        if ( ! file_exists( ABSPATH . '/Controllers/' . $this->controlador . '.php' ) ) {
             // Página não encontrada
             require_once ABSPATH . $this->not_found;
 
-            // FIM :)
             return;
         }
 
@@ -104,6 +102,7 @@ class TheMovieMVC
 
         // Se a classe do controlador indicado não existir, não faremos nada
         if ( ! class_exists( $this->controlador ) ) {
+
             // Página não encontrada
             require_once ABSPATH . $this->not_found;
 
@@ -125,7 +124,7 @@ class TheMovieMVC
             $this->controlador->index( $this->parametros );
 
             return;
-        } // ! $this->acao
+        }
 
         // Página não encontrada
         require_once ABSPATH . $this->not_found;

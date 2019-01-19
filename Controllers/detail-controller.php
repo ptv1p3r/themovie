@@ -6,17 +6,17 @@
  * Time: 20:10
  */
 /**
- * home - Controller
+ * detail - Controller
  */
-class HomeController
+class DetailController
 {
 
     /**
-     * Carrega a página "/views/home/home-view.php"
+     * Carrega a página "/views/detail/detail-view.php"
      */
-    public function index() {
+    public function view() {
         // Título da página
-        $this->title = 'Home';
+        $this->title = 'Detail';
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
@@ -29,11 +29,7 @@ class HomeController
         // /views/_includes/header.php
         require ABSPATH . '/views/_includes/header.php';
 
-        // /views/_includes/menu.php
-        //require ABSPATH . '/views/_includes/menu.php';
-
-        // /views/home/home-view.php
-        require ABSPATH . '/views/home/home-view.php';
+        require ABSPATH . '/views/detail/detail-view.php';
 
         // /views/_includes/footer.php
         require ABSPATH . '/views/_includes/footer.php';
