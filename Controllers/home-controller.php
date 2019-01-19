@@ -8,7 +8,7 @@
 /**
  * home - Controller
  */
-class HomeController
+class HomeController extends MainController
 {
 
     /**

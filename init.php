@@ -28,6 +28,7 @@ if ( ! defined('DEBUG') || DEBUG === false ) {
 }
 
 require_once ABSPATH . '/Includes/global-functions.php';
+require_once ABSPATH . '/Classes/classMainController.php';
 require_once ABSPATH . '/Classes/classTheMovieMVC.php';
 
 $_AppMovie = new TheMovieMVC();

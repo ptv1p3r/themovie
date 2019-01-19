@@ -8,7 +8,7 @@
 /**
  * detail - Controller
  */
-class DetailController
+class DetailController extends MainController
 {
     /**
      * Carrega a página "/views/detail/detail-view.php"

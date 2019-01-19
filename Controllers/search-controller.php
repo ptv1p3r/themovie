@@ -8,7 +8,7 @@
 /**
  * search - Controller
  */
-class SearchController
+class SearchController extends MainController
 {
 
     /**

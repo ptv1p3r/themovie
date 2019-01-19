@@ -8,8 +8,6 @@
 /**
  * MainController - Todos os controllers deverão estender essa classe
  *
- * @package TutsupMVC
- * @since 0.1
  */
 class MainController
 {
@@ -72,32 +70,25 @@ class MainController
      *
      * Configura as propriedades e métodos da classe.
      *
-     * @since 0.1
-     * @access public
      */
     public function __construct ( $parametros = array() ) {
 
         // Instancia do DB
-        $this->db = new TheMovieDB();
+        //$this->db = new TheMovieDB();
 
         // Phpass
-        $this->phpass = new PasswordHash(8, false);
+        //$this->phpass = new PasswordHash(8, false);
 
         // Parâmetros
         $this->parametros = $parametros;
 
-        // Verifica o login
-        //$this->check_userlogin();
-
-    } // __construct
+    }
 
     /**
      * Load model
      *
      * Carrega os modelos presentes na pasta /models/.
      *
-     * @since 0.1
-     * @access public
      */
     public function load_model( $model_name = false ) {
 
@@ -108,7 +99,7 @@ class MainController
         $model_name =  strtolower( $model_name );
 
         // Inclui o arquivo
-        $model_path = ABSPATH . '/models/' . $model_name . '.php';
+        $model_path = ABSPATH . '/Models/' . $model_name . '.php';
 
         // Verifica se o arquivo existe
         if ( file_exists( $model_path ) ) {
@@ -133,11 +124,10 @@ class MainController
 
             }
 
-            // The end :)
             return;
 
-        } // load_model
+        }
 
-    } // load_model
+    }
 
-} // class MainController
+}
