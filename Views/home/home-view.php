@@ -72,6 +72,7 @@ $movies = array(
                 <td align="center">
                     <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["id"];?>">Detail</a>
                 </td>
             <?php } ?>
         </tr>
@@ -91,6 +92,7 @@ $movies = array(
                 <td align="center">
                     <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["id"];?>">Detail</a>
                 </td>
             <?php } ?>
         </tr>
