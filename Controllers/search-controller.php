@@ -14,7 +14,7 @@ class SearchController
     /**
      * Carrega a página "/views/search/search-view.php"
      */
-    public function view() {
+    public function index() {
         // Título da página
         $this->title = 'Search';
 
