@@ -60,5 +60,23 @@ class SearchModel extends MainModel
         // Preenche a tabela com os dados
         return $query->fetchAll();
     }
+
+    /**
+     * Metodo que retorna todos os filmes existentes na BD
+     * @return array
+     */
+    public function getMovies(){
+        $query = null;
+
+        $query = $this->db->query('SELECT * FROM `movies`');
+
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
 }
 ?>

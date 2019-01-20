@@ -10,6 +10,8 @@
 <?php
 $movieCategories = $modelo->getCategories();
 $movieYears = $modelo->getYears();
+$movies = $modelo->getMovies();
+$movieCount = count($movies);
 ?>
 
 <!-- Search -->
@@ -95,21 +97,21 @@ $movieYears = $modelo->getYears();
     <div class="row justify-content-center border-0">
         <table border="1" cellpadding="5" cellspacing="5" style=" width: 500px">
             <tr>
-                <?php for ($i = 0 ; $i < 6 ; $i++) { ?>
+                <?php for ($i = 0 ; $i < 5 ; $i++) { ?> <!-- passar para 6 -->
                     <td align="center">
-                        <img src="../../Images/movie1.PNG" height="256" width="192">
-                        <p style="margin: 0" align="left">Title<br>2018</p>
-                        <a href="#">Detail</a>
+                        <img src="<?php echo $movies[$i]["poster"]; ?>" height="256" width="192">
+                        <p style="margin: 0" align="left"><?php echo $movies[$i]["title"] . "<br>" . $movies[$i]["year"]; ?></p>
+                        <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"];?>">Detail</a>
                     </td>
                 <?php } ?>
             </tr>
 
             <tr>
-                <?php for ($i = 0 ; $i < 6 ; $i++) { ?>
+                <?php for ($i = 0 ; $i < 5 ; $i++) { ?> <!-- passar para 6 -->
                     <td align="center">
-                        <img src="../../Images/movie1.PNG" height="256" width="192">
-                        <p style="margin: 0" align="left">Title<br>2018</p>
-                        <a href="#">Detail</a>
+                        <img src="<?php echo $movies[$i]["poster"]; ?>" height="256" width="192">
+                        <p style="margin: 0" align="left"><?php echo $movies[$i]["title"] . "<br>" . $movies[$i]["year"]; ?></p>
+                        <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"];?>">Detail</a>
                     </td>
                 <?php } ?>
             </tr>
