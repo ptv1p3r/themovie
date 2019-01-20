@@ -20,9 +20,8 @@ class DetailController extends MainController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        print_r($parametros);
+        $modelo = $this->load_model('detail-model');
 
-        // página não precisa de modelo
         $this->cssFile = ABSPATH . '/css/bootstrap.min.css';
 
         /** Carrega os arquivos do view **/

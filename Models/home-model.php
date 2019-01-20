@@ -41,7 +41,7 @@ class HomeModel extends MainModel{
         if ( ! $query ) {
             return array();
         }
-        // Preenche a tabela com os dados do usuário
+        // Preenche a tabela com os dados
         return $query->fetchAll();
     }
 
@@ -61,7 +61,7 @@ class HomeModel extends MainModel{
         if ( ! $query ) {
             return array();
         }
-        // Preenche a tabela com os dados do usuário
+        // Preenche a tabela com os dados
         return $query->fetchAll();
     }
 
@@ -82,7 +82,7 @@ class HomeModel extends MainModel{
         if ( ! $query ) {
             return array();
         }
-        // Preenche a tabela com os dados do usuário
+        // Preenche a tabela com os dados
         return $query->fetchAll();
     }
 }
