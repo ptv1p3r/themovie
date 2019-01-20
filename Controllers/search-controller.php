@@ -21,6 +21,8 @@ class SearchController extends MainController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
+        $modelo = $this->load_model('search-model');
+
         print_r($parametros);
 
         // página não precisa de modelo

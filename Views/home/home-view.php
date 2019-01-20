@@ -18,7 +18,7 @@
 
 <!-- Top Rated -->
 <div>
-    <table border="1" cellpadding="2" cellspacing="2" style="margin:0px auto; width: 500px">
+    <table border="1" cellpadding="2" cellspacing="2" style="margin:30px auto; width: 500px">
         <tr>
             <th colspan="4" class="text-center">TOP RATED</th>
         </tr>
@@ -38,7 +38,7 @@
 
 <!-- Top Downloaded -->
 <div>
-    <table border="1" cellpadding="2" cellspacing="2" style="margin:0px auto; width: 500px">
+    <table border="1" cellpadding="2" cellspacing="2" style="margin:30px auto; width: 500px">
         <tr>
             <th colspan="4" class="text-center">TOP DOWNLOADED</th>
         </tr>
@@ -58,7 +58,7 @@
 
 <!-- Last Added -->
 <div>
-    <table border="1" cellpadding="2" cellspacing="2" style="margin:0px auto; width: 500px">
+    <table border="1" cellpadding="2" cellspacing="2" style="margin:30px auto; width: 500px">
         <tr>
             <th colspan="4" class="text-center">LAST ADDED</th>
         </tr>

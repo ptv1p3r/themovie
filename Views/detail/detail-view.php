@@ -58,12 +58,12 @@
 
         <!-- Trailer -->
         <div class="col-sm-6 embed-responsive embed-responsive-16by9">
-            <iframe width="120" height="170"
-                    src="<?php echo $movieData[0]["media"];?>"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-            </iframe>
+<!--            <iframe width="120" height="170"-->
+<!--                    src="--><?php //echo $movieData[0]["media"];?><!--"-->
+<!--                    frameborder="0"-->
+<!--                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+<!--                    allowfullscreen>-->
+<!--            </iframe>-->
         </div>
 
         <!-- Picture 1 -->
@@ -79,11 +79,33 @@
     </div>
 </div>
 
-<br>
+<div class="container" style="margin-top:30px">
+
+    <div class="row justify-content-md-center">
+        <!-- Video Quality -->
+        <div class="col-md-auto">
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Quality</button>
+                <div class="dropdown-menu">
+                    <span class="dropdown-item" href="#">Link 1</span>
+                    <span class="dropdown-item" href="#">Link 2</span>
+                    <span class="dropdown-item" href="#">Link 3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Link -->
+        <div class="form col-md-6">
+            <a href="<?php echo HOME_URI ;?>">
+                <input class="form-control" type="text" placeholder="Link" readonly>
+            </a>
+        </div>
+
+    </div>
+</div>
 
 <div class="container" style="margin-top:30px">
     <div class="row">
-
         <!-- Comment Section -->
         <div class="col-md-6">
             <div class="card text-black-50 bg-black post panel-shadow">
@@ -112,7 +134,18 @@
                 </div>
             </div>
         </div>
+
+        <!-- Upvote -->
+        <div class="col-md-3">
+            <img src="../../Images/up.png" class="" alt="" width="256" height="256">
+        </div>
+
+        <!-- Downvote -->
+        <div class="col-md-3">
+            <img src="../../Images/down.png" class="" alt="" width="256" height="256">
+        </div>
     </div>
 
 </div>
+
 <br>
