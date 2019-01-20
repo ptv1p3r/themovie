@@ -6,37 +6,8 @@
  * Time: 20:10
  */
 
-// Array temp para encher chouricas
-$movies = array(
+$movies = $modelo->getTopRatedList();
 
-    array(
-        "id"	=> "123",
-        "name"	=> "Movie 1",
-        "img"	=> "movie1",
-        "year"  => "2018"
-    ),
-
-    array(
-        "id"	=> "456",
-        "name"	=> "Movie 2",
-        "img"	=> "movie2",
-        "year"  => "2018"
-    ),
-
-    array(
-        "id"	=> "789",
-        "name"	=> "Movie 3",
-        "img"	=> "movie3",
-        "year"  => "2018"
-    ),
-
-    array(
-        "id"	=> "0258",
-        "name"	=> "Movie 4",
-        "img"	=> "movie4",
-        "year"  => "2018"
-    )
-);
 ?>
 <?php if ( ! defined('ABSPATH')) exit; ?>
 
@@ -51,9 +22,9 @@ $movies = array(
         <tr>
             <?php foreach ($movies as $movie) { ?>
                 <td align="center">
-                    <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
-                    <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
-                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["id"];?>">Detail</a>
+                    <img src="<?php echo $movie["poster"]; ?>" height="256" width="192">
+                    <p style="margin: 0" align="left"><?php echo $movie["title"] . "<br>" . $movie["year"]; ?></p>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>">Detail</a>
                 </td>
             <?php } ?>
         </tr>
@@ -71,9 +42,9 @@ $movies = array(
         <tr>
             <?php foreach ($movies as $movie) { ?>
                 <td align="center">
-                    <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
-                    <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
-                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["id"];?>">Detail</a>
+                    <img src="<?php echo $movie["poster"]; ?>" height="256" width="192">
+                    <p style="margin: 0" align="left"><?php echo $movie["title"] . "<br>" . $movie["year"]; ?></p>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>">Detail</a>
                 </td>
             <?php } ?>
         </tr>
@@ -91,9 +62,9 @@ $movies = array(
         <tr>
             <?php foreach ($movies as $movie) { ?>
                 <td align="center">
-                    <img src="images/<?php echo $movie["img"]; ?>.png" height="256" width="192">
-                    <p style="margin: 0" align="left"><?php echo $movie["name"] . "<br>" . $movie["year"]; ?></p>
-                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["id"];?>">Detail</a>
+                    <img src="<?php echo $movie["poster"]; ?>" height="256" width="192">
+                    <p style="margin: 0" align="left"><?php echo $movie["title"] . "<br>" . $movie["year"]; ?></p>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>">Detail</a>
                 </td>
             <?php } ?>
         </tr>
