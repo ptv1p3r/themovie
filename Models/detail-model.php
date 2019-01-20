@@ -8,12 +8,7 @@
 
 class DetailModel extends MainModel{
 
-    /**
-     * O objeto da nossa conexão PDO
-     *
-     * @access public
-     */
-    public $db;
+    public $db; // PDO
 
     public function __construct( $db = false, $controller = null ) {
 
@@ -26,8 +21,9 @@ class DetailModel extends MainModel{
 
 
     /**
-     * Obtém filme pelo id
-     *
+     * Metodo que retorna os dados do filme pelo seu id
+     * @param null $intMovieId
+     * @return array
      */
     public function getMovieById($intMovieId = null) {
         $query = null;
@@ -44,6 +40,11 @@ class DetailModel extends MainModel{
         return $query->fetchAll();
     }
 
+    /**
+     * Metodo que retorna todas as categorias do filme
+     * @param null $intMovieId
+     * @return array
+     */
     public function getMovieCategories($intMovieId = null){
         $query = null;
 
