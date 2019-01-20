@@ -5,11 +5,12 @@
  * Date: 17/10/2018
  * Time: 20:10
  */
-
-$movies = $modelo->getTopRatedList();
-
 ?>
 <?php if ( ! defined('ABSPATH')) exit; ?>
+
+<?php
+    $movies = $modelo->getTopRatedList();
+?>
 
 <br>
 

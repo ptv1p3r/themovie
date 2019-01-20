@@ -6,7 +6,7 @@
  * Time: 20:10
  */
 
-class MovieModel extends MainModel{
+class HomeModel extends MainModel{
 
     /**
      * O objeto da nossa conexão PDO
