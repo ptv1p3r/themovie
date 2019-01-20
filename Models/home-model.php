@@ -29,9 +29,13 @@ class HomeModel extends MainModel{
      * Obtém a lista de filmes top rated
      *
      */
-    public function getTopRatedList() {
+    public function getTopRatedList($intLimit = 0) {
 
-        $query = $this->db->query('SELECT * FROM `movies` ORDER BY movid DESC LIMIT 4');
+        if ($intLimit > 0){
+            $query = $this->db->query('SELECT * FROM `movies` ORDER BY movid DESC LIMIT ' . $intLimit);
+        } else {
+            $query = $this->db->query('SELECT * FROM `movies` ORDER BY movid DESC');
+        }
 
         // Verifica se a consulta está OK
         if ( ! $query ) {
@@ -41,4 +45,44 @@ class HomeModel extends MainModel{
         return $query->fetchAll();
     }
 
+    /**
+     * Obtém a lista de filmes top downloaded
+     *
+     */
+    public function getTopDownloaded($intLimit = 0) {
+
+        if ($intLimit > 0){
+            $query = $this->db->query('SELECT * FROM `movies` ORDER BY download_count DESC LIMIT ' . $intLimit);
+        } else {
+            $query = $this->db->query('SELECT * FROM `movies` ORDER BY download_count DESC');
+        }
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados do usuário
+        return $query->fetchAll();
+    }
+
+    /**
+     * Obtém a lista de filmes adicionados recentemente
+     *
+     */
+    public function getLastAdded($intLimit = 0) {
+
+        if ($intLimit > 0){
+            $query = $this->db->query('SELECT * FROM `movies` ORDER BY creation_timestamp DESC LIMIT ' . $intLimit);
+        } else {
+            $query = $this->db->query('SELECT * FROM `movies` ORDER BY creation_timestamp DESC');
+        }
+
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados do usuário
+        return $query->fetchAll();
+    }
 }

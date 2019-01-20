@@ -9,7 +9,9 @@
 <?php if ( ! defined('ABSPATH')) exit; ?>
 
 <?php
-    $movies = $modelo->getTopRatedList();
+    $moviesTopRated = $modelo->getTopRatedList(4);
+    $moviesTopDownloaded = $modelo->getTopDownloaded(4);
+    $moviesLastAdded = $modelo->getLastAdded(4);
 ?>
 
 <br>
@@ -21,7 +23,7 @@
             <th colspan="4" class="text-center">TOP RATED</th>
         </tr>
         <tr>
-            <?php foreach ($movies as $movie) { ?>
+            <?php foreach ($moviesTopRated as $movie) { ?>
                 <td align="center">
                     <img src="<?php echo $movie["poster"]; ?>" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["title"] . "<br>" . $movie["year"]; ?></p>
@@ -41,7 +43,7 @@
             <th colspan="4" class="text-center">TOP DOWNLOADED</th>
         </tr>
         <tr>
-            <?php foreach ($movies as $movie) { ?>
+            <?php foreach ($moviesTopDownloaded as $movie) { ?>
                 <td align="center">
                     <img src="<?php echo $movie["poster"]; ?>" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["title"] . "<br>" . $movie["year"]; ?></p>
@@ -61,7 +63,7 @@
             <th colspan="4" class="text-center">LAST ADDED</th>
         </tr>
         <tr>
-            <?php foreach ($movies as $movie) { ?>
+            <?php foreach ($moviesLastAdded as $movie) { ?>
                 <td align="center">
                     <img src="<?php echo $movie["poster"]; ?>" height="256" width="192">
                     <p style="margin: 0" align="left"><?php echo $movie["title"] . "<br>" . $movie["year"]; ?></p>
