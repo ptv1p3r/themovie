@@ -8,65 +8,56 @@
 ?>
 <?php if ( ! defined('ABSPATH')) exit; ?>
 
-<div class="container" style="margin-top:30px">
+<div class="container-fluid" style="margin-top:30px">
     <div class="row">
         <!-- Movie Picture -->
         <div class="card" style="margin:10px auto;width: 200px;height: 300px">
                 <img class="card-img-top" src="<?php echo $movieData[0]["poster"]; ?>" alt="<?php echo $movieData[0]["title"]; ?>">
-            <div class="card-body" >
-                <h5 class="card-title text-white"><?php echo $movieData[0]["title"]; ?></h5>
-                <p class="card-text text-muted"><?php echo $movieData[0]["year"]; ?></p>
-            </div>
         </div>
 
         <!-- Movie Info -->
         <div class="col-sm-3">
             <br>
-            <h5>In: <i>720p.BlueRay, 1080p.Web</i></h5>
+            <div class="text-light">In: <i>720p.BlueRay, 1080p.Web</i></div>
 
             <br style="line-height: 160px">
 
-            <p style="margin: 0"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
-            <p style="margin: 0"><i><?php echo $movieData[0]["update_timestamp"];?></i></p>
+            <p class="text-muted"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
+            <p class="text-muted"><i><?php echo $movieData[0]["update_timestamp"];?></i></p>
         </div>
 
         <!-- Synopsis-->
         <div class="col-sm-6">
-            <h2><?php echo $movieData[0]["title"];?></h2>
-            <h6 style="margin: 0"><?php echo date("Y")?></h6>
-
-            <h6><?php echo $categories ;?></h6>
+            <div class="text-light"><h1><?php echo $movieData[0]["title"];?></h1></div>
+            <div class="text-light"><h2><?php echo $movieData[0]["year"];?></h2></div>
+            <div class="text-light"><h3><?php echo $categories;?></h3></div>
             <br>
-            <div>
-                <h5>Synopsis</h5>
-                <p><?php echo $movieData[0]["description"];?></p>
-            </div>
+            <div class="text-light"><h5>Synopsis</h5></div>
+            <div><p class="text-justify text-muted"><?php echo $movieData[0]["description"];?></p></div>
         </div>
 
     </div>
 </div>
-
-<div class="container" style="margin-top:30px">
+<div class="container-fluid" style="margin-top:30px">
     <div class="row">
-
         <!-- Trailer -->
-        <div class="col-sm-6 embed-responsive embed-responsive-16by9">
-<!--            <iframe width="120" height="170"-->
-<!--                    src="--><?php //echo $movieData[0]["media"];?><!--"-->
-<!--                    frameborder="0"-->
-<!--                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
-<!--                    allowfullscreen>-->
-<!--            </iframe>-->
+        <div class="col-sm-3 embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item"
+                  src="<?php echo $movieData[0]["media"];?>"
+                  frameborder="0"
+                  allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                  <!--allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
+           </iframe>
         </div>
 
         <!-- Picture 1 -->
         <div class="col-sm-3" >
-            <img src="<?php echo $movieData[0]["image_1"];?>" alt="" class="float-right" height="170" width="320">
+            <img src="<?php echo $movieData[0]["image_1"];?>" alt=""  height="200" width="320">
         </div>
 
         <!-- Picture 2 -->
         <div class="col-sm-3">
-            <img src="<?php echo $movieData[0]["image_2"];?>" alt="" class="float-right" height="170" width="320">
+            <img src="<?php echo $movieData[0]["image_2"];?>" alt=""  height="200" width="320">
         </div>
 
     </div>
