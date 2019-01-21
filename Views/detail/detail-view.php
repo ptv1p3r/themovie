@@ -43,7 +43,6 @@
             ?>
             <h6><?php echo $categories ;?></h6>
             <br>
-
             <div>
                 <h5>Synopsis</h5>
                 <p><?php echo $movieData[0]["description"];?></p>

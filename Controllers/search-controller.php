@@ -25,7 +25,6 @@ class SearchController extends MainController
 
         print_r($parametros);
 
-        // página não precisa de modelo
         $this->cssFile = ABSPATH . '/css/bootstrap.min.css';
 
         /** Carrega os arquivos do view **/
