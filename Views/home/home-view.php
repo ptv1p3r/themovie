@@ -20,16 +20,13 @@
 </div>
 <!-- Top Rated -->
 <div class="container-fluid">
-    <p class="text-light">TOP RATED</p>
+    <p class="text-light text-center">TOP RATED</p>
     <div class="row">
         <?php foreach ($moviesTopRated as $movie) { ?>
-            <!--<td align="center">
-                    <img src="<?php /*echo $movie["poster"]; */?>" height="256" width="192">
-                    <p style="margin: 0" align="left"><?php /*echo $movie["title"] . "<br>" . $movie["year"]; */?></p>
-                    <a href="<?php /*echo HOME_URI . '/detail/view/' . $movie["movid"];*/?>">Detail</a>
-                </td>-->
             <div class="card" style="margin:10px auto;width: 200px;height: 300px">
-                <img class="card-img-top" src="<?php echo $movie["poster"]; ?>" alt="Card image cap">
+                <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>">
+                    <img class="card-img-top" src="<?php echo $movie["poster"]; ?>" alt="<?php echo $movie["title"]; ?>">
+                </a>
                 <div class="card-body">
                     <h5 class="card-title"><p class="text-white"><?php echo $movie["title"]; ?></p></h5>
                     <p class="card-text"><p class="text-muted"><?php echo $movie["year"]; ?></p></p>
