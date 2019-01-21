@@ -24,7 +24,7 @@ class HomeController extends MainController
 
         $modelo = $this->load_model('home-model');
 
-        $this->cssFile = ABSPATH . '/css/bootstrap.min.css';
+       /** $this->cssFile = ABSPATH . '/css/movie.css';**/
 
         /** Carrega os arquivos do view **/
 

@@ -23,8 +23,6 @@ class SearchController extends MainController
 
         $modelo = $this->load_model('search-model');
 
-        print_r($parametros);
-
         $this->cssFile = ABSPATH . '/css/bootstrap.min.css';
 
         /** Carrega os arquivos do view **/
