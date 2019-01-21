@@ -16,13 +16,22 @@ class DetailController extends MainController
     public function view() {
         // Título da página
         $this->title = 'Detail';
+        $categories = null;
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
         $modelo = $this->load_model('detail-model');
 
-        $this->cssFile = ABSPATH . '/css/bootstrap.min.css';
+        $movieData = $modelo->getMovieById($modelo->parametros[0]);
+        $movieCategories = $modelo->getMovieCategories($modelo->parametros[0]);
+
+        foreach ($movieCategories as $category) {
+                $categories .= $category["name"].' / ';
+        }
+            // remove o ultimo /
+        $categories = substr_replace($categories,"",strrpos($categories, "/"));
+
 
         /** Carrega os arquivos do view **/
 

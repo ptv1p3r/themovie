@@ -7,17 +7,16 @@
  */
 ?>
 <?php if ( ! defined('ABSPATH')) exit; ?>
-<?php
-    $categories = null;
-    $movieData = $modelo->getMovieById($modelo->parametros[0]);
-    $movieCategories = $modelo->getMovieCategories($modelo->parametros[0]);
-?>
 
 <div class="container" style="margin-top:30px">
     <div class="row">
         <!-- Movie Picture -->
-        <div class="col-sm-3">
-            <img src="<?php echo $movieData[0]["poster"];?>" alt="" class="mx-auto d-block">
+        <div class="card" style="margin:10px auto;width: 200px;height: 300px">
+                <img class="card-img-top" src="<?php echo $movieData[0]["poster"]; ?>" alt="<?php echo $movieData[0]["title"]; ?>">
+            <div class="card-body" >
+                <h5 class="card-title text-white"><?php echo $movieData[0]["title"]; ?></h5>
+                <p class="card-text text-muted"><?php echo $movieData[0]["year"]; ?></p>
+            </div>
         </div>
 
         <!-- Movie Info -->
@@ -35,12 +34,7 @@
         <div class="col-sm-6">
             <h2><?php echo $movieData[0]["title"];?></h2>
             <h6 style="margin: 0"><?php echo date("Y")?></h6>
-            <?php foreach ($movieCategories as $category) {
-                $categories .= $category["name"].' / ';
-            }
-            // remove o ultimo /
-            $categories = substr_replace($categories,"",strrpos($categories, "/"));
-            ?>
+
             <h6><?php echo $categories ;?></h6>
             <br>
             <div>

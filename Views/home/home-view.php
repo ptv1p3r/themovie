@@ -8,11 +8,6 @@
 ?>
 <?php if ( ! defined('ABSPATH')) exit; ?>
 
-<?php
-    $moviesTopRated = $modelo->getTopRatedList(4);
-    $moviesTopDownloaded = $modelo->getTopDownloaded(4);
-    $moviesLastAdded = $modelo->getLastAdded(4);
-?>
 <div class="container-fluid">
     <div class="text-light">
         <h1>Download RealMovie: HD smallest size</h1>

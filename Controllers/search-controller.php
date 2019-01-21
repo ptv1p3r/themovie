@@ -23,7 +23,10 @@ class SearchController extends MainController
 
         $modelo = $this->load_model('search-model');
 
-        $this->cssFile = ABSPATH . '/css/bootstrap.min.css';
+        $movieCategories = $modelo->getCategories();
+        $movieYears = $modelo->getYears();
+        $movies = $modelo->getMovies();
+        $movieCount = count($movies);
 
         /** Carrega os arquivos do view **/
 

@@ -7,13 +7,6 @@
  */
 ?>
 
-<?php
-$movieCategories = $modelo->getCategories();
-$movieYears = $modelo->getYears();
-$movies = $modelo->getMovies();
-$movieCount = count($movies);
-?>
-
 <!-- Search -->
 <div class="container" style="margin-top:30px">
     <div class="row justify-content-center">

@@ -24,7 +24,9 @@ class HomeController extends MainController
 
         $modelo = $this->load_model('home-model');
 
-       /** $this->cssFile = ABSPATH . '/css/movie.css';**/
+        $moviesTopRated = $modelo->getTopRatedList(4);
+        $moviesTopDownloaded = $modelo->getTopDownloaded(4);
+        $moviesLastAdded = $modelo->getLastAdded(4);
 
         /** Carrega os arquivos do view **/
 
