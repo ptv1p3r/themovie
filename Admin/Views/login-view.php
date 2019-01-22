@@ -10,9 +10,15 @@ include "../_includes/header.php"
 ?>
 
 <div class="container">
-    <div class="row  justify-content-center align-items-center ">
+
+    <div class="row  justify-content-center align-items-center" style="margin-top: 100px">
+        <img src="../../Images/logo_black.png" alt="">
+        <h1 class="text-light">The Real Movie Database</h1>
+    </div>
+
+    <div class="row  justify-content-center align-items-center">
         <div class="col-lg-4">
-            <div class="jumbotron" style="margin-top: 300px">
+            <div class="jumbotron" style="margin-top: 150px">
 
                 <form>
                     <div class="form-group">
