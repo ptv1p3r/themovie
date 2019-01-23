@@ -19,9 +19,9 @@
         <div class="col-sm-3">
             <br>
             <div class="text-light">In: <i>720p.BlueRay, 1080p.Web</i></div>
-
+            <input type="hidden" id="movieId" name="movieId" value="<?php echo $movieData[0]["movid"]; ?>" />
             <br style="line-height: 160px">
-
+            <p class="text-muted" id="voteCount"><i>Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></p>
             <p class="text-muted"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
             <p class="text-muted"><i><?php echo $movieData[0]["update_timestamp"];?></i></p>
         </div>
@@ -121,12 +121,12 @@
 
         <!-- Upvote -->
         <div class="col-md-3">
-            <img src="../../Images/up.png" class="" alt="" width="256" height="256">
+            <img src="../../Images/up.png" class="voteOk" id="vtOK" alt="" width="156" height="156">
         </div>
 
         <!-- Downvote -->
         <div class="col-md-3">
-            <img src="../../Images/down.png" class="" alt="" width="256" height="256">
+            <img src="../../Images/down.png" class="img-fluid" alt="" width="156" height="156">
         </div>
     </div>
 

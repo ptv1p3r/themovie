@@ -62,4 +62,24 @@ class DetailModel extends MainModel{
         return $query->fetchAll();
     }
 
+    /**
+     * Metodo que retorna todas as categorias do filme
+     * @param null $intMovieId
+     * @return array
+     */
+    public function getVoteCount($intMovieId = null){
+        $query = null;
+
+        if ($intMovieId != null){
+            $query = $this->db->query('SELECT (vote_ok + vote_notok) as total FROM `movies` WHERE movid = '.$intMovieId);
+        }
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
 }
