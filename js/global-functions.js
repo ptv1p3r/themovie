@@ -10,7 +10,7 @@ $(document).ready(function () {
             function(data, status){
                 $("#voteCount").text(data);
                 $("#vtOK").hide();
-               // alert("Data: " + data + "\nStatus: " + status);
+                alert("Data: " + data + "\nStatus: " + status);
         });
     })
 })
