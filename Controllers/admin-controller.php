@@ -24,7 +24,7 @@ class AdminController extends MainController
 
         /** Carrega os arquivos do view **/
 
-        require ABSPATH . '/views/_includes/admin-login-header.php';
+        require ABSPATH . '/views/_includes/admin-header.php';
 
         require ABSPATH . '/views/admin/admin-view.php';
 
@@ -43,9 +43,85 @@ class AdminController extends MainController
 
         /** Carrega os arquivos do view **/
 
-        require ABSPATH . '/views/_includes/admin-login-header.php';
+        require ABSPATH . '/views/_includes/admin-header.php';
 
         require ABSPATH . '/views/admin/admin-home-view.php';
+
+        require ABSPATH . '/views/_includes/footer.php';
+
+    }
+
+    public function comment(){
+        // Título da página
+        $this->title = 'Admin - Comment';
+
+        // Parametros da função
+        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+
+        //$modelo = $this->load_model('admin-login-model');
+
+        /** Carrega os arquivos do view **/
+
+        require ABSPATH . '/views/_includes/admin-header.php';
+
+        require ABSPATH . '/views/admin/admin-comment-view.php';
+
+        require ABSPATH . '/views/_includes/footer.php';
+
+    }
+
+    public function category(){
+        // Título da página
+        $this->title = 'Admin - Category';
+
+        // Parametros da função
+        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+
+        //$modelo = $this->load_model('admin-login-model');
+
+        /** Carrega os arquivos do view **/
+
+        require ABSPATH . '/views/_includes/admin-header.php';
+
+        require ABSPATH . '/views/admin/admin-category-view.php';
+
+        require ABSPATH . '/views/_includes/footer.php';
+
+    }
+
+    public function rating(){
+        // Título da página
+        $this->title = 'Admin - Category';
+
+        // Parametros da função
+        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+
+        //$modelo = $this->load_model('admin-login-model');
+
+        /** Carrega os arquivos do view **/
+
+        require ABSPATH . '/views/_includes/admin-header.php';
+
+        require ABSPATH . '/views/admin/admin-rating-view.php';
+
+        require ABSPATH . '/views/_includes/footer.php';
+
+    }
+
+    public function quality(){
+        // Título da página
+        $this->title = 'Admin - Category';
+
+        // Parametros da função
+        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+
+        //$modelo = $this->load_model('admin-login-model');
+
+        /** Carrega os arquivos do view **/
+
+        require ABSPATH . '/views/_includes/admin-header.php';
+
+        require ABSPATH . '/views/admin/admin-quality-view.php';
 
         require ABSPATH . '/views/_includes/footer.php';
 
