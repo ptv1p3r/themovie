@@ -70,7 +70,7 @@
     </div>
 </div>
 
-<div class="container" style="margin-top:30px">
+<div class="container-fluid" style="margin-top:30px">
     <div class="row">
         <!-- Comment Section -->
         <div class="col-md-6">
@@ -99,19 +99,50 @@
                         John on time down give meet help as of.</p>
                 </div>
             </div>
+            <br>
+            <div class="card text-black-50 bg-black post panel-shadow">
+                <!-- Comment -->
+                <div class="card-header">
+                    <!-- User Pic -->
+                    <div class="float-left image">
+                        <img src="../../Images/user.png" alt="" width="48"
+                             height="48">
+                    </div>
+
+                    <!-- Username & Post time -->
+                    <div class="float-left meta" style="margin-left: 10px">
+                        <div class="title h5"><b>Ryan Haywood</b>
+                            made a post.</div>
+                        <h6 class="text-muted time">1 minute ago</h6>
+                    </div>
+                </div>
+
+                <!-- Comment -->
+                <div class="card-body">
+                    <p style="margin: 0">Barton waited twenty always repair in within we do.
+                        An delighted offending curiosity my is dashwoods at.
+                        Boy prosperous increasing surrounded companions her nor advantages sufficient put.
+                        John on time down give meet help as of.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Upvote -->
-        <div class="col-md-3">
-            <img src="../../Images/up.png" class="voteOk" id="vtOK" alt="" width="156" height="156">
-        </div>
-
-        <!-- Downvote -->
-        <div class="col-md-3">
-            <img src="../../Images/down.png" class="voteNotOk" id="vtNOTOK" alt="" width="156" height="156">
+        <div class="row">
+            <div class="col-sm-9 text-light">
+                <img src="../../Images/vote.png"  alt="" width="24" height="24">Cast your vote!
+            </div>
+            <div class="row mx-auto">
+                <!-- Upvote -->
+                <div class="col-8 col-sm-6">
+                    <img src="../../Images/up.png" class="voteOk" id="vtOK" alt="" width="100" height="100">
+                </div>
+                <!-- Downvote -->
+                <div class="col-4 col-sm-6">
+                    <img src="../../Images/down.png" style="transform:rotate(180deg)" class="voteNotOk" id="vtNOTOK" alt="" width="100" height="100">
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 
 <br>
