@@ -6,7 +6,7 @@
  * Time: 23:14
  */
 /**
- * TheMovieMVC - Gerencia Models, Controllers e Views
+ * TheMovieMVC - Gere Models, Controllers e Views
  *
  * @package TheMovieMVC
  */
@@ -14,32 +14,22 @@ class TheMovieMVC
 {
 
     /**
-     * $controlador
      *
      * valor do controlador (Vindo da URL).
      * localhost/controlador/
-     *
-     * @access private
      */
     private $controlador;
 
     /**
-     * $acao
      *
      * valor da ação (Também vem da URL):
      * localhost/controlador/acao
-     *
-     * @access private
      */
     private $acao;
 
     /**
-     * $parametros
-     *
      * array dos parâmetros (Também vem da URL):
      * localhost/controlador/acao/param1/param2/param50
-     *
-     * @access private
      */
     private $parametros;
 
@@ -83,10 +73,9 @@ class TheMovieMVC
             return;
         }
 
-        // Se o arquivo do controlador não existir, não faremos nada
+        // Se o arquivo do controlador não existir
         if ( ! file_exists( ABSPATH . '/Controllers/' . $this->controlador . '.php' ) ) {
-            // Página não encontrada
-            require_once ABSPATH . $this->not_found;
+            require_once ABSPATH . $this->not_found;    // Página não encontrada
 
             return;
         }
@@ -95,16 +84,13 @@ class TheMovieMVC
         require_once ABSPATH . '/Controllers/' . $this->controlador . '.php';
 
         // Remove caracteres inválidos do nome do controlador para gerar o nome
-        // da classe. Se o arquivo chamar "news-controller.php", a classe deverá
-        // se chamar NewsController.
+        // da classe. Se o arquivo se chamar "noticias-controller.php", a classe deverá
+        // ser NoticiasController.
         $this->controlador = preg_replace( '/[^a-zA-Z]/i', '', $this->controlador );
 
-        // Se a classe do controlador indicado não existir, não faremos nada
+        // Se a classe do controlador indicado não existir
         if ( ! class_exists( $this->controlador ) ) {
-
-            // Página não encontrada
-            require_once ABSPATH . $this->not_found;
-
+            require_once ABSPATH . $this->not_found;    // Página não encontrada
             return;
         }
 
@@ -114,19 +100,16 @@ class TheMovieMVC
         // Se o método indicado existir, executa o método e envia os parâmetros
         if ( method_exists( $this->controlador, $this->acao ) ) {
             $this->controlador->{$this->acao}( $this->parametros );
-
             return;
         }
 
-        // Sem ação, chamamos o método index
+        // Sem ação, dispara o método index
         if ( ! $this->acao && method_exists( $this->controlador, 'index' ) ) {
             $this->controlador->index( $this->parametros );
-
             return;
         }
 
-        // Página não encontrada
-        require_once ABSPATH . $this->not_found;
+        require_once ABSPATH . $this->not_found; // Página não encontrada
 
         return;
     }
@@ -137,12 +120,12 @@ class TheMovieMVC
      * Obtém os parâmetros de $_GET['path'] e configura as propriedades
      * $this->controlador, $this->acao e $this->parametros
      *
-     * A URL deverá ter o seguinte formato:
+     * Formato da URL:
      * http://localhost/controlador/acao/parametro1/parametro2/etc...
      */
     public function get_url_data () {
 
-        // Verifica se o parâmetro path foi enviado
+        // Valida o path
         if ( isset( $_GET['path'] ) ) {
 
             // Captura o valor de $_GET['path']
