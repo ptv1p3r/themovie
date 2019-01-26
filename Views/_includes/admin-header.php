@@ -1,12 +1,11 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: V1p3r
- * Date: 21/11/2018
- * Time: 22:55
+ * User: lmore
+ * Date: 26/01/2019
+ * Time: 12:03
  */
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,3 +23,31 @@
 
 </head>
 <body>
+
+
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+    <a class="navbar-brand mr-1" href="../admin_home/admin-home-view.php">
+        <img src="../../Images/logo_black.png" alt="" width="48">The Real Movie Database
+    </a>
+
+
+    <!-- Spacing -->
+    <a class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></a>
+
+    <!-- Navbar -->
+    <ul class="navbar-nav ml-auto ml-md-0">
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-fw"><img src="../../Images/user.png" alt="" height="48"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#">Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            </div>
+        </li>
+    </ul>
+
+</nav>
