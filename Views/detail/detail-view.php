@@ -25,7 +25,7 @@
             <div class="text-light">In: <i>720p.BlueRay, 1080p.Web</i></div>
             <br style="line-height: 160px">
             <p class="text-muted" id="imdb"><img src="../../Images/logo-imdb.svg"  alt="" width="24" height="24"><?php echo $movieData[0]["rating_1"];?><span style="color: green;"><i class="fas fa-star"></i></span></p>
-            <p class="text-muted" id="voteCount"><img src="../../Images/vote.png"  alt="" width="24" height="24"><i>Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></p>
+            <p class="text-muted" id="voteCount"><span style="color: green;"><i class="fas fa-heart"></i></span><i>Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></p>
             <p class="text-muted" id="DownloadCount"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
             <p class="text-muted"><i><?php echo $movieData[0]["update_timestamp"];?></i></p>
         </div>
