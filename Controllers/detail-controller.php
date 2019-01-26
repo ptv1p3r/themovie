@@ -57,4 +57,18 @@ class DetailController extends MainController
         print($movieVoteCount[0]["total"]);
     }
 
+    public function voteDown() {
+        // Parametros da função
+        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+        $modelo = $this->load_model('detail-model');
+
+        $modelo->setVote($modelo->parametros[0]);
+
+        $movieVoteCount = $modelo->getVoteCount($modelo->parametros[0]);
+
+        //print_r($parametros);
+
+        print($movieVoteCount[0]["total"]);
+    }
+
 }

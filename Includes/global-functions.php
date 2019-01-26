@@ -27,8 +27,13 @@ function chk_array ( $array, $key ) {
     return null;
 }
 
+/**
+ * @param $file
+ * @return null|string|string[]
+ */
 function auto_version($file)
 {
+
     if(strpos($file, '/') !== 0 || !file_exists($_SERVER['DOCUMENT_ROOT'] . $file))
         return $file;
 

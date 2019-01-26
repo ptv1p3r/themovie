@@ -26,7 +26,7 @@
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Password">
                     </div>
-                    <a class="btn btn-success form-control" href="Views/admin/admin-home-view.php">Login</a>
+                    <a class="btn btn-success form-control" href="<?php echo HOME_URI . '/admin/login';?>">Login</a>
 
                 </form>
 

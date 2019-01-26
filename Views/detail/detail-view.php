@@ -126,7 +126,7 @@
 
         <!-- Downvote -->
         <div class="col-md-3">
-            <img src="../../Images/down.png" class="img-fluid" id="vtNOTOK" alt="" width="156" height="156">
+            <img src="../../Images/down.png" class="voteNotOk" id="vtNOTOK" alt="" width="156" height="156">
         </div>
     </div>
 

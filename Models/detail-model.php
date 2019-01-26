@@ -94,7 +94,7 @@ class DetailModel extends MainModel{
             if ($bolOk){
                 $query = $this->db->query('UPDATE `movies` SET vote_ok = vote_ok + 1, update_timestamp = "' . date("Y-m-d H:i:s") .'"  WHERE movid = '.$intMovieId);
             } else {
-                $query = $this->db->query('UPDATE `movies` SET vote_notok = vote_notok + 1, update_timestamp = "' . date("Y-m-d H:i:s") .'" WHERE movid = '.$intMovieId);
+                $query = $this->db->query('UPDATE `movies` SET vote_notok = vote_notok - 1, update_timestamp = "' . date("Y-m-d H:i:s") .'" WHERE movid = '.$intMovieId);
             }
         }
 
