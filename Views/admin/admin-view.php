@@ -5,10 +5,8 @@
  * Date: 17/10/2018
  * Time: 20:14
  */
-
-include "../_includes/admin-login-header.php"
 ?>
-
+<?php if ( ! defined('ABSPATH')) exit; ?>
 <div class="container">
 
     <div class="row  justify-content-center align-items-center" style="margin-top: 100px">
@@ -36,5 +34,3 @@ include "../_includes/admin-login-header.php"
         </div>
     </div>
 </div>
-
-<?php include "../_includes/footer.php"?>

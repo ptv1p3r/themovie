@@ -6,30 +6,29 @@
  * Time: 22:19
  */
 
-class AdminHomeController extends MainController
+class AdminController extends MainController
 {
 
     /**
-     * Carrega a página "/views/admin_login/admin-login-view.php"
+     * Carrega a página "/views/admin/admin-view.php"
      */
     public function index() {
 
         // Título da página
-        $this->title = 'Home';
+        $this->title = 'Admin';
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        $modelo = $this->load_model('admin-login-model');
-
+        //$modelo = $this->load_model('admin-login-model');
 
         /** Carrega os arquivos do view **/
 
-        require ABSPATH . '/views/_includes/admin-login-header.php';
+        //require ABSPATH . '/views/_includes/admin-login-header.php';
 
-        require ABSPATH . '/views/admin_login/admin-login-view.php';
+        require ABSPATH . '/views/admin/admin-view.php';
 
-        require ABSPATH . '/views/_includes/admin-header.php';
+        //require ABSPATH . '/views/_includes/admin-header.php';
 
     }
 
