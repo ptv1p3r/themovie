@@ -16,7 +16,7 @@
             <div class="card-body">
                 <input type="hidden" id="movieId" name="movieId" value="<?php echo $movieData[0]["movid"]; ?>" />
 
-                <a href="<?php echo HOME_URI . '/detail/download/' . $movieData[0]["movid"];?>" class="btn btn-success">Download</a>
+                <button type="button"  id="btnDownload" class="btn btn-success">Download</button>
             </div>
         </div>
 
@@ -26,7 +26,7 @@
             <div class="text-light">In: <i>720p.BlueRay, 1080p.Web</i></div>
             <br style="line-height: 160px">
             <p class="text-muted" id="voteCount"><i>Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></p>
-            <p class="text-muted"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
+            <p class="text-muted" id="DownloadCount"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
             <p class="text-muted"><i><?php echo $movieData[0]["update_timestamp"];?></i></p>
         </div>
 

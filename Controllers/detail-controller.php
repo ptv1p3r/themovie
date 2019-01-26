@@ -48,22 +48,31 @@ class DetailController extends MainController
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
         $modelo = $this->load_model('detail-model');
 
-        $movieDownloadLink = $modelo->getDownloadLink($modelo->parametros[0]);
+        $ReturnData = null;
 
-        $filename = $movieDownloadLink[0]["download_link"];
-        header('Pragma: public');
-        header('Expires: 0');
-        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
-        header('Cache-Control: private', false); // required for certain browsers
-        header('Content-Type: application/pdf');
+        //$movieDownloadLink = $modelo->getDownloadLink($modelo->parametros[0]);
+        $ReturnData[0] = $modelo->getDownloadLink($modelo->parametros[0]);
 
-        header('Content-Disposition: attachment; filename="'. basename($filename) . '";');
-        header('Content-Transfer-Encoding: binary');
-        header('Content-Length: ' . filesize($filename));
+        $ReturnData[1] = $modelo->getDownloadCount($modelo->parametros[0]);
 
-        readfile($filename);
+//        $movieDownloadCount = $modelo->getDownloadCount($modelo->parametros[0]);
 
-        exit;
+        print ($ReturnData[0][0]["download_link"] . "#" . $ReturnData[1][0]["total"]);
+
+//        $filename = $movieDownloadLink[0]["download_link"];
+//        header('Pragma: public');
+//        header('Expires: 0');
+//        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+//        header('Cache-Control: private', false); // required for certain browsers
+//        header('Content-Type: application/pdf');
+//
+//        header('Content-Disposition: attachment; filename="'. basename($filename) . '";');
+//        header('Content-Transfer-Encoding: binary');
+//        header('Content-Length: ' . filesize($filename));
+//
+//        readfile($filename);
+
+        //exit;
 
     }
 

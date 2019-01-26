@@ -20,7 +20,7 @@ class DetailModel extends MainModel{
     }
 
     /**
-     * Metodo que retorna os link de download
+     * Metodo que retorna o link de download
      * @param null $intMovieId
      * @return array
      */
@@ -33,6 +33,26 @@ class DetailModel extends MainModel{
 
             $query = $this->db->query('SELECT download_link FROM `movies` WHERE movid = '.$intMovieId);
 
+        }
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    /**
+     * Metodo que retorna o total de link de download
+     * @param null $intMovieId
+     * @return array
+     */
+    public function getDownloadCount($intMovieId = null){
+        $query = null;
+
+        if ($intMovieId != null){
+            $query = $this->db->query('SELECT download_count as total FROM `movies` WHERE movid = '.$intMovieId);
         }
 
         // Verifica se a consulta está OK
