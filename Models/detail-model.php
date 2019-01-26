@@ -19,6 +19,29 @@ class DetailModel extends MainModel{
         $this->parametros = $this->controller->parametros; // Configura os parâmetros
     }
 
+    /**
+     * Metodo que retorna os link de download
+     * @param null $intMovieId
+     * @return array
+     */
+    public function getDownloadLink($intMovieId = null) {
+        $query = null;
+
+        if ($intMovieId != null){
+
+            $query = $this->db->query('UPDATE `movies` SET download_count = download_count + 1 WHERE movid = '.$intMovieId);
+
+            $query = $this->db->query('SELECT download_link FROM `movies` WHERE movid = '.$intMovieId);
+
+        }
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
 
     /**
      * Metodo que retorna os dados do filme pelo seu id

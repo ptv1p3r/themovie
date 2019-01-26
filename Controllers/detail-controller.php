@@ -43,6 +43,33 @@ class DetailController extends MainController
 
     }
 
+    public function download(){
+        // Parametros da função
+        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+        $modelo = $this->load_model('detail-model');
+
+        $movieDownloadLink = $modelo->getDownloadLink($modelo->parametros[0]);
+
+        $filename = $movieDownloadLink[0]["download_link"];
+        header('Pragma: public');
+        header('Expires: 0');
+        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+        header('Cache-Control: private', false); // required for certain browsers
+        header('Content-Type: application/pdf');
+
+        header('Content-Disposition: attachment; filename="'. basename($filename) . '";');
+        header('Content-Transfer-Encoding: binary');
+        header('Content-Length: ' . filesize($filename));
+
+        readfile($filename);
+
+        exit;
+
+    }
+
+    /**
+     * Acao de voto positivo no filme
+     */
     public function voteUp() {
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
@@ -57,6 +84,9 @@ class DetailController extends MainController
         print($movieVoteCount[0]["total"]);
     }
 
+    /**
+     * Acao de voto negativo no filme
+     */
     public function voteDown() {
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();

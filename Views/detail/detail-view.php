@@ -14,7 +14,9 @@
         <div class="card" style="margin:10px auto;width: 200px;height: 300px">
                 <img class="card-img-top" src="<?php echo $movieData[0]["poster"]; ?>" alt="<?php echo $movieData[0]["title"]; ?>">
             <div class="card-body">
-                <a href="<?php echo $movieData[0]["download_link"]; ?>" class="btn btn-success">Download</a>
+                <input type="hidden" id="movieId" name="movieId" value="<?php echo $movieData[0]["movid"]; ?>" />
+
+                <a href="<?php echo HOME_URI . '/detail/download/' . $movieData[0]["movid"];?>" class="btn btn-success">Download</a>
             </div>
         </div>
 
@@ -22,7 +24,6 @@
         <div class="col-sm-3">
             <br>
             <div class="text-light">In: <i>720p.BlueRay, 1080p.Web</i></div>
-            <input type="hidden" id="movieId" name="movieId" value="<?php echo $movieData[0]["movid"]; ?>" />
             <br style="line-height: 160px">
             <p class="text-muted" id="voteCount"><i>Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></p>
             <p class="text-muted"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
