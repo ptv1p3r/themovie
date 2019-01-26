@@ -92,13 +92,13 @@ class DetailModel extends MainModel{
 
         if ($intMovieId != null){
             if ($bolOk){
-                $query = $this->db->query('UPDATE `movies` SET vote_ok = vote_ok + 1 WHERE movid = '.$intMovieId);
+                $query = $this->db->query('UPDATE `movies` SET vote_ok = vote_ok + 1, update_timestamp = "' . date("Y-m-d H:i:s") .'"  WHERE movid = '.$intMovieId);
             } else {
-                $query = $this->db->query('UPDATE `movies` SET vote_notok = vote_notok + 1 WHERE movid = '.$intMovieId);
+                $query = $this->db->query('UPDATE `movies` SET vote_notok = vote_notok + 1, update_timestamp = "' . date("Y-m-d H:i:s") .'" WHERE movid = '.$intMovieId);
             }
         }
 
-        // Verifica se a consulta está OK
+        // Verifica se a consulta está
         if ( $query ) {
             return $query;
         }

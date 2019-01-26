@@ -48,7 +48,7 @@ class DetailController extends MainController
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
         $modelo = $this->load_model('detail-model');
 
-        $modelo->setVote(parametros[0],true);
+        $modelo->setVote($modelo->parametros[0],true);
 
         $movieVoteCount = $modelo->getVoteCount($modelo->parametros[0]);
 
