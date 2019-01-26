@@ -26,8 +26,8 @@
                     <div class="form-group">
                         <input type="password" class="form-control" placeholder="Password">
                     </div>
+                    <a class="btn btn-success form-control" href="Views/admin/admin-home-view.php">Login</a>
 
-                    <button type="submit" class="btn btn-success form-control">Login</button>
                 </form>
 
             </div>

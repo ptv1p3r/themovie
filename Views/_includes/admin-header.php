@@ -29,6 +29,8 @@
     <!-- Custom fonts for this template-->
     <link href="../../font/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
+    <link href="../../datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
