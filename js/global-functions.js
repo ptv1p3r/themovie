@@ -8,9 +8,10 @@ $(document).ready(function () {
                 path: "detail/voteUp/" + movieId,
             },
             function(data, status){
-                $("#voteCount").text(data);
+                $("#voteCount").text("Voted " + data + " times");
                 $("#vtOK").hide();
-                alert("Data: " + data + "\nStatus: " + status);
+                $("#vtNOTOK").hide();
+                //alert("Datah: " + data + "\nStatus: " + status);
         });
     })
 })
