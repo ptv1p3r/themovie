@@ -27,7 +27,6 @@
                         <input type="password" class="form-control" placeholder="Password">
                     </div>
                     <a class="btn btn-success form-control" href="<?php echo HOME_URI . '/admin/login';?>">Login</a>
-
                 </form>
 
             </div>

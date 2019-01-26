@@ -198,6 +198,20 @@
                 </div>
             </div>
         </div>
+
+
+        <!-- Logout Modal HTML -->
+        <div id="logoutModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Logout <i class="fa fa-lock"></i></h4>
+                    </div>
+                    <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-off?</div>
+                    <div class="modal-footer"><a href="<?php echo HOME_URI . '/admin/';?>" class="btn btn-primary btn-block">Logout</a></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

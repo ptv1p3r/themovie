@@ -72,209 +72,27 @@
                         <th align="right"></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td align="">
+
+                    <?php foreach ($categories as $category) { ?>
+                        <tbody>
+                        <tr>
+                            <td align="">
                                 <span class="custom-checkbox">
                                     <input type="checkbox" id="checkbox1" name="options[]" value="1">
                                     <label for="checkbox1"></label>
                                 </span>
-                        </td>
-                        <td>1</td>
-                        <td>Action</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
+                            </td>
+                            <td><?php echo $category["id"]?></td>
+                            <td><?php echo $category["name"]?></td>
+                            <td>
+                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
+                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    <?php }?>
 
-                    <tbody>
-                    <tr>
-                        <td>
-                                    <span class="custom-checkbox">
-                                        <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                        <label for="checkbox1"></label>
-                                    </span>
-                        </td>
-                        <td>2</td>
-                        <td>Sci-Fi</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
 
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>3</td>
-                        <td>Biography</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>4</td>
-                        <td>Drama</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>5</td>
-                        <td>History</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>6</td>
-                        <td>Music</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>7</td>
-                        <td>Romance</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>8</td>
-                        <td>Thriller</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>9</td>
-                        <td>War</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>10</td>
-                        <td>Family</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>11</td>
-                        <td>Fantasy</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
-                        <td>12</td>
-                        <td>Musical</td>
-                        <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
-                        </td>
-                    </tr>
-                    </tbody>
                 </table>
 
                 <div class="clearfix">
@@ -382,6 +200,20 @@
                             <input type="submit" class="btn btn-danger" value="Delete">
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Logout Modal HTML -->
+        <div id="logoutModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Logout <i class="fa fa-lock"></i></h4>
+                    </div>
+                    <div class="modal-body"><i class="fa fa-question-circle"></i> Are you sure you want to log-off?</div>
+                    <div class="modal-footer"><a href="<?php echo HOME_URI . '/admin/';?>" class="btn btn-primary btn-block">Logout</a></div>
                 </div>
             </div>
         </div>

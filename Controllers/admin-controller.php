@@ -20,7 +20,8 @@ class AdminController extends MainController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        //$modelo = $this->load_model('admin-login-model');
+        $modelo = $this->load_model('admin-model');
+        $categories = $modelo->getCategories();
 
         /** Carrega os arquivos do view **/
 
