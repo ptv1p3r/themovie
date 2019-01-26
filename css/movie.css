@@ -3,3 +3,7 @@ body{
 }
 .top-buffer { margin-top:220px; }
 .top7 { margin-top:7px; }
+.screenshot{
+    width: 33%;
+    display: inline-block;
+}

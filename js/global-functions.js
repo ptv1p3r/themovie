@@ -9,7 +9,6 @@ $(document).ready(function () {
             function(data, status){
                 var dataReceived = data.split("#");
                 $("#DownloadCount").text("Downloaded " + dataReceived[1] + " times");
-                //e.preventDefault();  //stop the browser from following
                 window.location.href = dataReceived[0];
                 //alert("Datah: " + dataReceived + "\nStatus: " + status);
             });

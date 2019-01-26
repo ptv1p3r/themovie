@@ -42,10 +42,10 @@
 
     </div>
 </div>
-<div class="container-fluid" style="margin-top:30px">
-    <div class="row">
+<div class="container-fluid" style="margin-top:50px">
+    <div class="row mx-auto">
         <!-- Trailer -->
-        <div class="col-sm-3 embed-responsive embed-responsive-16by9">
+        <div class="col embed-responsive">
           <iframe class="embed-responsive-item"
                   src="<?php echo $movieData[0]["media"];?>"
                   frameborder="0"
@@ -53,15 +53,18 @@
                   <!--allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
            </iframe>
         </div>
-
         <!-- Picture 1 -->
-        <div class="col-sm-3" >
-            <img src="<?php echo $movieData[0]["image_1"];?>" alt=""  height="200" width="320">
-        </div>
+        <div class="screenshot" >
+            <a class="thumbnail" href="#">
+                <img class="img-responsive" src="<?php echo $movieData[0]["image_1"];?>" alt=""  height="200" width="320">
+            </a>
 
+        </div>
         <!-- Picture 2 -->
-        <div class="col-sm-3">
-            <img src="<?php echo $movieData[0]["image_2"];?>" alt=""  height="200" width="320">
+        <div class="screenshot">
+            <a class="thumbnail" href="#">
+                <img class="img-responsive" src="<?php echo $movieData[0]["image_2"];?>" alt=""  height="200" width="320">
+            </a>
         </div>
 
     </div>
