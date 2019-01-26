@@ -55,14 +55,14 @@
         </div>
         <!-- Picture 1 -->
         <div class="screenshot" >
-            <a class="thumbnail" href="#">
+            <a class="thumbnail" href="<?php echo $movieData[0]["image_1"];?>">
                 <img class="img-responsive" src="<?php echo $movieData[0]["image_1"];?>" alt=""  height="200" width="320">
             </a>
 
         </div>
         <!-- Picture 2 -->
         <div class="screenshot">
-            <a class="thumbnail" href="#">
+            <a class="thumbnail" href="<?php echo $movieData[0]["image_2"];?>">
                 <img class="img-responsive" src="<?php echo $movieData[0]["image_2"];?>" alt=""  height="200" width="320">
             </a>
         </div>
