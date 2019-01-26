@@ -13,6 +13,9 @@
         <!-- Movie Picture -->
         <div class="card" style="margin:10px auto;width: 200px;height: 300px">
                 <img class="card-img-top" src="<?php echo $movieData[0]["poster"]; ?>" alt="<?php echo $movieData[0]["title"]; ?>">
+            <div class="card-body">
+                <a href="<?php echo $movieData[0]["download_link"]; ?>" class="btn btn-success">Download</a>
+            </div>
         </div>
 
         <!-- Movie Info -->
@@ -58,31 +61,6 @@
         <!-- Picture 2 -->
         <div class="col-sm-3">
             <img src="<?php echo $movieData[0]["image_2"];?>" alt=""  height="200" width="320">
-        </div>
-
-    </div>
-</div>
-
-<div class="container" style="margin-top:30px">
-
-    <div class="row justify-content-md-center">
-        <!-- Video Quality -->
-        <div class="col-md-auto">
-            <div class="dropdown">
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Quality</button>
-                <div class="dropdown-menu">
-                    <span class="dropdown-item" href="#">Link 1</span>
-                    <span class="dropdown-item" href="#">Link 2</span>
-                    <span class="dropdown-item" href="#">Link 3</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Download Link -->
-        <div class="form col-md-6">
-            <a href="<?php echo HOME_URI ;?>">
-                <input class="form-control" type="text" placeholder="Link" readonly>
-            </a>
         </div>
 
     </div>
