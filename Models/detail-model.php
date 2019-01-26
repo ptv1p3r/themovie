@@ -63,7 +63,7 @@ class DetailModel extends MainModel{
     }
 
     /**
-     * Metodo que retorna todas as categorias do filme
+     * Metodo que retorna total de votos
      * @param null $intMovieId
      * @return array
      */
@@ -80,6 +80,30 @@ class DetailModel extends MainModel{
         }
         // Preenche a tabela com os dados
         return $query->fetchAll();
+    }
+
+    /**
+     * Metodo que insere votos
+     * @param null $intMovieId
+     * @param false $bolOk
+     * @return array
+     */
+    public function setVote($intMovieId = null, $bolOk = false){
+
+        if ($intMovieId != null){
+            if ($bolOk){
+                $query = $this->db->query('UPDATE `movies` SET vote_ok = vote_ok + 1 WHERE movid = '.$intMovieId);
+            } else {
+                $query = $this->db->query('UPDATE `movies` SET vote_notok = vote_notok + 1 WHERE movid = '.$intMovieId);
+            }
+        }
+
+        // Verifica se a consulta está OK
+        if ( $query ) {
+            return $query;
+        }
+
+        return ;
     }
 
 }
