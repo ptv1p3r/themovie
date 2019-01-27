@@ -72,6 +72,7 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Year</th>
+                        <th>Categories</th>
                         <th>Creation Date</th>
                         <th>Last Updated</th>
                         <th></th>
@@ -90,11 +91,14 @@
                             <td><?php echo $movie["movid"]?></td>
                             <td><?php echo $movie["title"]?></td>
                             <td><?php echo $movie["year"]?></td>
+                            <td><?php echo "?"?></td>
                             <td><?php echo $movie["creation_timestamp"]?></td>
                             <td><?php echo $movie["update_timestamp"]?></td>
                             <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
+                                <a href="#editMovieModal" data-movid="<?php echo $movie["movid"]?>" data-title="<?php echo $movie["title"]?>"
+                                   data-year="<?php echo $movie["year"]?>"
+                                   class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
+                                <a href="#deleteMovieModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         </tbody>
@@ -129,6 +133,7 @@
                                 <?php }
                             }?>
                         </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -139,22 +144,40 @@
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h4 class="modal-title">Add Employee</h4>
+                            <h4 class="modal-title">Add Movie</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Movie</label>
                                 <input type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone</label>
+                                <label>Title</label>
                                 <input type="text" class="form-control" required>
                             </div>
+                            <div class="form-group">
+                                <label>Year</label>
+                                <input type="number" class="form-control" required>
+                            </div>
+
+                            <label>Categories</label>
+                            <div class="form-group" style="padding-left: 40px" >
+                                    <?php foreach ( $categories as $category) {?>
+
+                                        <div class="form-check form-check-inline col-md-3">
+                                            <input class="form-check-input" type="checkbox" id="<?php echo $category["catid"]?>">
+                                            <label class="form-check-label" for="<?php echo $category["catid"]?>"><?php echo $category["name"]?></label>
+                                        </div>
+
+                                        <?php if($category["catid"] % 3 == 0) { ?>
+                                            </div>
+                                            <div class="form-group" style="padding-left: 40px">
+                                        <?php } ?>
+                                    <?php }?>
+
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -171,26 +194,46 @@
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h4 class="modal-title">Edit Employee</h4>
+                            <h4 class="modal-title">Edit Movie</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" required>
+                                <label>Movie</label>
+                                <input id="movid" type="text" class="form-control" disabled>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
+                                <label>Title</label>
+                                <input id="title" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" required></textarea>
+                                <label>Year</label>
+                                <input id="year" type="number" class="form-control" required>
                             </div>
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" required>
+                            <label>Categories</label>
+                            <div class="form-group" style="padding-left: 40px" >
+                                <?php foreach ( $categories as $category) {?>
+
+                                    <div class="form-check form-check-inline col-md-3">
+                                        <input class="form-check-input" type="checkbox" id="<?php echo $category["catid"]?>"
+                                            <?php foreach ($movieCategories as $movCat) {
+                                                if ($movCat["catid"] == $category["catid"]){
+                                                    if ($movCat["catid"] == $_POST["movid"]) {?>
+                                                        checked
+                                                    <?php }
+                                                }
+                                            }?>
+                                        <label class="form-check-label" for="<?php echo $category["catid"]?>"><?php echo $category["name"]?></label>
+                                    </div>
+
+                                    <?php if($category["catid"] % 3 == 0) { ?>
+                                    </div>
+                                    <div class="form-group" style="padding-left: 40px">
+                                    <?php } ?>
+                                <?php }?>
+
                             </div>
+
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -207,7 +250,7 @@
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h4 class="modal-title">Delete Employee</h4>
+                            <h4 class="modal-title">Delete Movie</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
