@@ -10,7 +10,7 @@
 <?php if ( ! defined('ABSPATH')) exit; ?>
 
 
-<div class="container-fluid">
+<div class="container-fluid" style="margin-top: 15%">
         <p class="text-muted text-center">Copyright ISMAT &copy;<?php echo date('Y');?> -
     SIM - Pedro Roldan, Leandro Moreira</p>
 </div>
