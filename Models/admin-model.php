@@ -21,14 +21,50 @@ class AdminModel extends MainModel {
     }
 
     /**
-     * Metodo que retorna todas as categorias Existentes
+     * Metodo que retorna todas as categorias Existentes na BD
      * @return array
      */
+    public function getTableCategories($page = null){
+        $query = null;
+
+        //if ($page != null){
+            if ($page == "" || $page == "1") {
+                $startNumber = 0;
+            } else {
+                $startNumber = ($page*10)-10;
+            }
+            $query = $this->db->query('SELECT * FROM `categories` limit ' . $startNumber.',10');
+        //}
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
     public function getCategories(){
         $query = null;
 
+        $query = $this->db->query('SELECT * FROM `categories`');
 
-        $query = $this->db->query('SELECT catid as id , name FROM `categories` ');
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    /**
+     * Metodo que retorna todos os filmes existentes na BD
+     * @return array
+     */
+    public function getMovies(){
+        $query = null;
+
+        $query = $this->db->query('SELECT * FROM `movies`');
 
 
         // Verifica se a consulta está OK
@@ -38,4 +74,22 @@ class AdminModel extends MainModel {
         // Preenche a tabela com os dados
         return $query->fetchAll();
     }
+
+    /**
+     * Metodo que retorna todos os categorias com filmes
+     * @return array
+     */
+    public function getMovieCategories(){
+        $query = null;
+
+        $query = $this->db->query('SELECT * FROM `movies_categories`');
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
 }

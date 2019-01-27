@@ -32,20 +32,24 @@ class AdminController extends MainController
 
     }
 
-    public function login(){
+    public function movie(){
         // Título da página
-        $this->title = 'Admin - Login';
+        $this->title = 'Admin - Movies';
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        //$modelo = $this->load_model('admin-login-model');
+        $modelo = $this->load_model('admin-model');
+        $movies = $modelo->getMovies();
+        $categories = $modelo->getCategories();
+        $movieCategories = $modelo->getMovieCategories();
+
 
         /** Carrega os arquivos do view **/
 
         require ABSPATH . '/views/_includes/admin-header.php';
 
-        require ABSPATH . '/views/admin/admin-home-view.php';
+        require ABSPATH . '/views/admin/admin-movie-view.php';
 
         require ABSPATH . '/views/_includes/footer.php';
 
@@ -58,7 +62,7 @@ class AdminController extends MainController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        //$modelo = $this->load_model('admin-login-model');
+        //$modelo = $this->load_model('admin-model');
 
         /** Carrega os arquivos do view **/
 
@@ -81,6 +85,8 @@ class AdminController extends MainController
 
         $modelo = $this->load_model('admin-model');
         $categories = $modelo->getCategories();
+        $categoriesTable = $modelo->getTableCategories($modelo->parametros[0]);
+
 
         /** Carrega os arquivos do view **/
 
@@ -99,7 +105,7 @@ class AdminController extends MainController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        //$modelo = $this->load_model('admin-login-model');
+        //$modelo = $this->load_model('admin-model');
 
         /** Carrega os arquivos do view **/
 
@@ -118,7 +124,7 @@ class AdminController extends MainController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        //$modelo = $this->load_model('admin-login-model');
+        //$modelo = $this->load_model('admin-model');
 
         /** Carrega os arquivos do view **/
 
@@ -137,7 +143,7 @@ class AdminController extends MainController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        //$modelo = $this->load_model('admin-login-model');
+        //$modelo = $this->load_model('admin-model');
 
         /** Carrega os arquivos do view **/
 

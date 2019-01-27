@@ -9,7 +9,7 @@
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
-    <a class="navbar-brand mr-1" href="<?php echo HOME_URI . '/admin/login';?>"> <img src="<?php echo HOME_URI . '/Images/logo_black.png';?>" alt="" width="48">The Real Movie Database</a>
+    <a class="navbar-brand mr-1" href="<?php echo HOME_URI . '/admin/movie';?>"> <img src="<?php echo HOME_URI . '/Images/logo_black.png';?>" alt="" width="48">The Real Movie Database</a>
 
     <!-- Spacing -->
     <a class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></a>
@@ -34,9 +34,9 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/login';?>"><span>Tabela CRUD Fimes</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie';?>"><span>Tabela CRUD Fimes</span></a></li>
         <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment';?>"><span>Tabela CRUD Comment</span></a></li>
-        <li class="nav-item active"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category';?>"><span>Tabela CRUD Categorias</span></a></li>
+        <li class="nav-item active"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Tabela CRUD Categorias</span></a></li>
         <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/rating';?>"><span>Tabela CRUD Rating</span></a></li>
         <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/quality';?>"><span>Tabela CRUD Qualidade</span></a></li>
     </ul>
@@ -73,7 +73,7 @@
                     </tr>
                     </thead>
 
-                    <?php foreach ($categories as $category) { ?>
+                    <?php foreach ($categoriesTable as $category) { ?>
                         <tbody>
                         <tr>
                             <td align="">
@@ -82,7 +82,7 @@
                                     <label for="checkbox1"></label>
                                 </span>
                             </td>
-                            <td><?php echo $category["id"]?></td>
+                            <td><?php echo $category["catid"]?></td>
                             <td><?php echo $category["name"]?></td>
                             <td>
                                 <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
@@ -96,15 +96,15 @@
                 </table>
 
                 <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <div class="hint-text">Showing <b>10</b> out of <b><?php echo count($categories)?></b> entries</div>
                     <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+
+                        <?php for ($i = 1 ; $i <= ceil(count($categories)/10) ; $i++) { ?>
+                            <li class="page-item <?php if ($parametros[0] == $i) {
+                                echo "active";
+                            }?>"><a href="<?php echo HOME_URI . '/admin/category/' . $i;?>" class="page-link"><?php echo $i?></a></li>
+                        <?php }?>
+
                     </ul>
                 </div>
             </div>
