@@ -34,11 +34,9 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie';?>"><span>Tabela CRUD Fimes</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment';?>"><span>Tabela CRUD Comment</span></a></li>
-        <li class="nav-item active"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Tabela CRUD Categorias</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/rating';?>"><span>Tabela CRUD Rating</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/quality';?>"><span>Tabela CRUD Qualidade</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie/1';?>"><span>Gestão de Filmes</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment/1';?>"><span>Comentários</span></a></li>
+        <li class="nav-item active"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Categorias</span></a></li>
     </ul>
 
     <div id="content-wrapper">
@@ -62,10 +60,10 @@
                     <thead>
                     <tr>
                         <th>
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="selectAll">
-                                    <label for="selectAll"></label>
-                                </span>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="selectAll">
+                                <label for="selectAll"></label>
+                            </span>
                         </th>
                         <th>Category ID</th>
                         <th>Name</th>
@@ -96,7 +94,13 @@
                 </table>
 
                 <div class="clearfix">
-                    <div class="hint-text">Showing <b>10</b> out of <b><?php echo count($categories)?></b> entries</div>
+                    <div class="hint-text">Showing <b>
+                        <?php if (10*$parametros[0] >= count($categories)) {
+                                echo count($categories);
+                            } else {
+                                echo 10*$parametros[0];
+                        }?>
+                        </b> out of <b><?php echo count($categories)?></b> entries</div>
                     <ul class="pagination">
 
                         <?php for ($i = 1 ; $i <= ceil(count($categories)/10) ; $i++) { ?>

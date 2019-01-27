@@ -35,11 +35,11 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie';?>"><span>Tabela CRUD Fimes</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment';?>"><span>Tabela CRUD Comment</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie/1';?>"><span>Tabela CRUD Fimes</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment/1';?>"><span>Tabela CRUD Comment</span></a></li>
         <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Tabela CRUD Categorias</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/rating';?>"><span>Tabela CRUD Rating</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/quality';?>"><span>Tabela CRUD Qualidade</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/rating/1';?>"><span>Tabela CRUD Rating</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/quality/1';?>"><span>Tabela CRUD Qualidade</span></a></li>
     </ul>
 
     <div id="content-wrapper">

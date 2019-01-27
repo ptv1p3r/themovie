@@ -33,11 +33,10 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item "><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie';?>"><span>Tabela CRUD Fimes</span></a></li>
-        <li class="nav-item active"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment';?>"><span>Tabela CRUD Comment</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Tabela CRUD Categorias</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/rating';?>"><span>Tabela CRUD Rating</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/quality';?>"><span>Tabela CRUD Qualidade</span></a></li>
+        <li class="nav-item "><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie/1';?>"><span>Gestão de Filmes</span></a></li>
+        <li class="nav-item active"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment/1';?>"><span>Comentários</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Categorias</span></a></li>
+
     </ul>
 
     <div id="content-wrapper">
@@ -66,40 +65,44 @@
 								<label for="selectAll"></label>
 							</span>
                         </th>
-                        <th>Category ID</th>
-                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Comment</th>
+                        <th>Description</th>
+                        <th></th>
                     </tr>
-                    </thead>
+                    <?php foreach ($commentsTable as $comment) { ?>
                     <tbody>
                     <tr>
-                        <td>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="options[]" value="1">
-								<label for="checkbox1"></label>
-							</span>
+                        <td align="">
+                                <span class="custom-checkbox">
+                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                    <label for="checkbox1"></label>
+                                </span>
                         </td>
-                        <td>Thomas Hardy</td>
-                        <td>thomashardy@mail.com</td>
-                        <td>89 Chiaroscuro Rd, Portland, USA</td>
-                        <td>(171) 555-2222</td>
+                        <td><?php echo $comment["comid"]?></td>
+                        <td><?php echo $comment["user"]?></td>
+                        <td><?php echo $comment["description"]?></td>
                         <td>
                             <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
                             <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
                     </tbody>
+                    <?php }?>
                 </table>
 
                 <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div>
+                    <div class="hint-text">Showing <b><?php if (10*$parametros[0] >= count($comments)) {
+                                echo count($comments);
+                            } else {
+                                echo 10*$parametros[0];
+                            }?></b> out of <b><?php echo count($comments)?></b> entries</div>
                     <ul class="pagination">
-                        <li class="page-item disabled"><a href="#">Previous</a></li>
-                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                        <li class="page-item"><a href="#" class="page-link">4</a></li>
-                        <li class="page-item"><a href="#" class="page-link">5</a></li>
-                        <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                        <?php for ($i = 1 ; $i <= ceil(count($comments)/10) ; $i++) { ?>
+                            <li class="page-item <?php if ($parametros[0] == $i) {
+                                echo "active";
+                            }?>"><a href="<?php echo HOME_URI . '/admin/category/' . $i;?>" class="page-link"><?php echo $i?></a></li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>

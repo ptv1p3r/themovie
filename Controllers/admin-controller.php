@@ -40,7 +40,10 @@ class AdminController extends MainController
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
         $modelo = $this->load_model('admin-model');
+
         $movies = $modelo->getMovies();
+        $moviesTable = $modelo->getMoviesTable($modelo->parametros[0]);
+
         $categories = $modelo->getCategories();
         $movieCategories = $modelo->getMovieCategories();
 
@@ -62,7 +65,10 @@ class AdminController extends MainController
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
 
-        //$modelo = $this->load_model('admin-model');
+        $modelo = $this->load_model('admin-model');
+
+        $comments = $modelo->getComments();
+        $commentsTable = $modelo->getCommentsTable($modelo->parametros[0]);
 
         /** Carrega os arquivos do view **/
 
@@ -84,6 +90,7 @@ class AdminController extends MainController
         //$modelo = $this->load_model('admin-login-model');
 
         $modelo = $this->load_model('admin-model');
+
         $categories = $modelo->getCategories();
         $categoriesTable = $modelo->getTableCategories($modelo->parametros[0]);
 
@@ -93,44 +100,6 @@ class AdminController extends MainController
         require ABSPATH . '/views/_includes/admin-header.php';
 
         require ABSPATH . '/views/admin/admin-category-view.php';
-
-        require ABSPATH . '/views/_includes/footer.php';
-
-    }
-
-    public function rating(){
-        // Título da página
-        $this->title = 'Admin - Category';
-
-        // Parametros da função
-        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
-
-        //$modelo = $this->load_model('admin-model');
-
-        /** Carrega os arquivos do view **/
-
-        require ABSPATH . '/views/_includes/admin-header.php';
-
-        require ABSPATH . '/views/admin/admin-rating-view.php';
-
-        require ABSPATH . '/views/_includes/footer.php';
-
-    }
-
-    public function quality(){
-        // Título da página
-        $this->title = 'Admin - Category';
-
-        // Parametros da função
-        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
-
-        //$modelo = $this->load_model('admin-model');
-
-        /** Carrega os arquivos do view **/
-
-        require ABSPATH . '/views/_includes/admin-header.php';
-
-        require ABSPATH . '/views/admin/admin-quality-view.php';
 
         require ABSPATH . '/views/_includes/footer.php';
 

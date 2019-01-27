@@ -35,11 +35,9 @@
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
-        <li class="nav-item active"><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie';?>"><span>Tabela CRUD Fimes</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment';?>"><span>Tabela CRUD Comment</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Tabela CRUD Categorias</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/rating';?>"><span>Tabela CRUD Rating</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/quality';?>"><span>Tabela CRUD Qualidade</span></a></li>
+        <li class="nav-item active"><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie/1';?>"><span>Gestão de Filmes</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment/1';?>"><span>Comentários</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Categorias</span></a></li>
     </ul>
 
     <div id="content-wrapper">
@@ -77,7 +75,7 @@
                     </tr>
                     </thead>
 
-                    <?php foreach ($movies as $movie) { ?>
+                    <?php foreach ($moviesTable as $movie) { ?>
                         <tbody>
                         <tr>
                             <td align="">
@@ -102,15 +100,17 @@
                 </table>
 
                 <div class="clearfix">
-                    <div class="hint-text">Showing <b>5</b> out of <b><?php echo count($movies)?></b> entries</div>
+                    <div class="hint-text">Showing <b><?php if (10*$parametros[0] >= count($movies)) {
+                                echo count($movies);
+                            } else {
+                                echo 10*$parametros[0];
+                            }?></b> out of <b><?php echo count($movies)?></b> entries</div>
                         <ul class="pagination">
-                            <li class="page-item disabled"><a href="#">Previous</a></li>
-                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                            <li class="page-item"><a href="#" class="page-link">2</a></li>
-                            <li class="page-item"><a href="#" class="page-link">3</a></li>
-                            <li class="page-item"><a href="#" class="page-link">4</a></li>
-                            <li class="page-item"><a href="#" class="page-link">5</a></li>
-                            <li class="page-item"><a href="#" class="page-link">Next</a></li>
+                            <?php for ($i = 1 ; $i <= ceil(count($movies)/10) ; $i++) { ?>
+                            <li class="page-item <?php if ($parametros[0] == $i) {
+                                echo "active";
+                            }?>"><a href="<?php echo HOME_URI . '/admin/category/' . $i;?>" class="page-link"><?php echo $i?></a></li>
+                            <?php }?>
                         </ul>
                 </div>
             </div>

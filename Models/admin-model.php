@@ -24,17 +24,10 @@ class AdminModel extends MainModel {
      * Metodo que retorna todas as categorias Existentes na BD
      * @return array
      */
-    public function getTableCategories($page = null){
+    public function getCategories(){
         $query = null;
 
-        //if ($page != null){
-            if ($page == "" || $page == "1") {
-                $startNumber = 0;
-            } else {
-                $startNumber = ($page*10)-10;
-            }
-            $query = $this->db->query('SELECT * FROM `categories` limit ' . $startNumber.',10');
-        //}
+        $query = $this->db->query('SELECT * FROM `categories`');
 
         // Verifica se a consulta está OK
         if ( ! $query ) {
@@ -44,10 +37,21 @@ class AdminModel extends MainModel {
         return $query->fetchAll();
     }
 
-    public function getCategories(){
+    /**
+     * Metodo que retorna 10 categorias da BD
+     * @return array
+     */
+    public function getTableCategories($page = null){
         $query = null;
 
-        $query = $this->db->query('SELECT * FROM `categories`');
+        //if ($page != null){
+        if ($page == "" || $page == "1") {
+            $startNumber = 0;
+        } else {
+            $startNumber = ($page*10)-10;
+        }
+        $query = $this->db->query('SELECT * FROM `categories` limit ' . $startNumber.',10');
+        //}
 
         // Verifica se a consulta está OK
         if ( ! $query ) {
@@ -65,6 +69,70 @@ class AdminModel extends MainModel {
         $query = null;
 
         $query = $this->db->query('SELECT * FROM `movies`');
+
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    /**
+     * Metodo que retorna 10 filmes existentes na BD
+     * @return array
+     */
+    public function getMoviesTable($page = null){
+        $query = null;
+
+        if ($page == "" || $page == "1") {
+            $startNumber = 0;
+        } else {
+            $startNumber = ($page*10)-10;
+        }
+        $query = $this->db->query('SELECT * FROM `movies` limit ' . $startNumber.',10');
+
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    /**
+     * Metodo que retorna todos os comentarios existentes na BD
+     * @return array
+     */
+    public function getComments(){
+        $query = null;
+
+        $query = $this->db->query('SELECT * FROM `comments`');
+
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    /**
+     * Metodo que retorna 10 comentarios existentes na BD
+     * @return array
+     */
+    public function getCommentsTable($page = null){
+        $query = null;
+
+        if ($page == "" || $page == "1") {
+            $startNumber = 0;
+        } else {
+            $startNumber = ($page*10)-10;
+        }
+        $query = $this->db->query('SELECT * FROM `comments` limit ' . $startNumber.',10');
 
 
         // Verifica se a consulta está OK
