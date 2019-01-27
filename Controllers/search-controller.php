@@ -31,6 +31,12 @@ class SearchController extends MainController
         $movies = $modelo->getMovies();
         $movieCount = count($movies);
 
+        if ($parametros[0] == null || $parametros[0] == "") {
+            $moviesTable = $modelo->getMoviesTable(1);
+        } else {
+            $moviesTable = $modelo->getMoviesTable($modelo->$parametros[0]);
+        }
+
         foreach ($movieCategories as $category) {
             $categories  .= '<span class="dropdown-item" >'.$category['name'].'</span>';
         }
