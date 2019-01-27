@@ -81,5 +81,28 @@ class SearchModel extends MainModel
         // Preenche a tabela com os dados
         return $query->fetchAll();
     }
+
+    /**
+     * Metodo que retorna 10 dos filmes existentes na BD
+     * @return array
+     */
+    public function getMoviesTable($page = null){
+        $query = null;
+
+        if ($page == "" || $page == "1") {
+            $startNumber = 0;
+        } else {
+            $startNumber = ($page*10)-10;
+        }
+        $query = $this->db->query('SELECT * FROM `movies` limit ' . $startNumber.',10');
+
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
 }
 ?>

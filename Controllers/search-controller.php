@@ -28,6 +28,13 @@ class SearchController extends MainController
         $movies = $modelo->getMovies();
         $movieCount = count($movies);
 
+        if ($parametros[0] == null || $parametros[0] == "") {
+            $moviesTable = $modelo->getMoviesTable(1);
+        } else {
+            $moviesTable = $modelo->getMoviesTable($modelo->$parametros[0]);
+        }
+
+
         /** Carrega os arquivos do view **/
 
         require ABSPATH . '/views/_includes/header.php';

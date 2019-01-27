@@ -116,7 +116,8 @@
                         </b> out of <b><?php echo count($categories)?></b> entries</div>
                     <ul class="pagination">
                         <?php if ($parametros[0] == null) { ?>
-                            <li class="page-item active"><a href="<?php echo HOME_URI . '/admin/category/' . 1;?>" class="page-link">1</a></li>
+                            <li class="page-item active"><a href="<?php echo HOME_URI . '/admin/category/' . 1;?>"
+                                                            class="page-link">1</a></li>
                         <?php } else {
                             for ($i = 1; $i <= ceil(count($categories) / 10); $i++) { ?>
                                 <li class="page-item <?php if ($parametros[0] == $i) {

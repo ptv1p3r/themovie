@@ -68,52 +68,71 @@
 <div class="container-fluid" style="margin-top:30px">
     <!-- Upper Pagination -->
     <div class="row justify-content-center">
-        <ul class="pagination justify-content-center" style="margin:30px">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <ul class="pagination">
+            <?php for ($i = 1; $i <= ceil($movieCount / 10); $i++) { ?>
+                    <li class="page-item <?php if ($parametros[0] == $i) {
+                        echo "active";
+                    } else if ($parametros[0] == null && $i==1) {
+                        echo "active";
+                    } ?>">
+                        <a href="<?php echo HOME_URI . '/search/' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
+                <?php }?>
+
         </ul>
     </div>
 
     <!-- Movies -->
     <div class="row justify-content-center border-0">
         <table border="1" cellpadding="5" cellspacing="5" style=" width: 500px">
-            <tr>
-                <?php for ($i = 0 ; $i < 4 ; $i++) { ?>
-                    <td align="center">
-                        <img src="<?php echo $movies[$i]["poster"]; ?>" height="256" width="192">
-                        <p style="margin: 0" align="left"><?php echo $movies[$i]["title"] . "<br>" . $movies[$i]["year"]; ?></p>
-                        <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"];?>">Detail</a>
-                    </td>
-                <?php } ?>
-            </tr>
 
             <tr>
-                <?php for ($i = 0 ; $i < 4 ; $i++) { ?>
-                    <td align="center">
-                        <img src="<?php echo $movies[$i]["poster"]; ?>" height="256" width="192">
-                        <p style="margin: 0" align="left"><?php echo $movies[$i]["title"] . "<br>" . $movies[$i]["year"]; ?></p>
-                        <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"];?>">Detail</a>
-                    </td>
-                <?php } ?>
+                <?php if (count($moviesTable) <= 5) {
+                    for ($i = 0; $i < count($moviesTable); $i++) { ?>
+                        <td align="center">
+                            <img src="<?php echo $moviesTable[$i]["poster"]; ?>" height="256" width="192">
+                            <p style="margin: 0"
+                               align="left"><?php echo $moviesTable[$i]["title"] . "<br>" . $moviesTable[$i]["year"]; ?>
+                            </p>
+                            <a href="<?php echo HOME_URI . '/detail/view/' . $moviesTable[$i]["movid"]; ?>">Detail</a>
+                        </td>
+                    <?php } ?>
             </tr>
+               <?php } else {
+                   for ($i = 0; $i < count($moviesTable); $i++) { ?>
+                       <td align="center">
+                           <img src="<?php echo $moviesTable[$i]["poster"]; ?>" height="256" width="192">
+                           <p style="margin: 0"
+                              align="left"><?php echo $moviesTable[$i]["title"] . "<br>" . $moviesTable[$i]["year"]; ?>
+                           </p>
+                           <a href="<?php echo HOME_URI . '/detail/view/' . $moviesTable[$i]["movid"]; ?>">Detail</a>
+                       </td>
+
+                       <?php if (($i + 1) % 5 == 0) { ?>
+                           </tr>
+                            <tr>
+                       <?php }
+                   }
+                }?>
+
+
+
         </table>
     </div>
 
+    <br>
+
     <!-- Lower Pagination -->
     <div class="row justify-content-center">
-        <ul class="pagination justify-content-center" style="margin:30px">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">4</a></li>
-            <li class="page-item"><a class="page-link" href="#">5</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <ul class="pagination">
+            <?php for ($i = 1; $i <= ceil($movieCount / 10); $i++) { ?>
+                <li class="page-item <?php if ($parametros[0] == $i) {
+                    echo "active";
+                } else if ($parametros[0] == null && $i==1) {
+                    echo "active";
+                } ?>">
+                    <a href="<?php echo HOME_URI . '/search/' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
+            <?php }?>
+
         </ul>
     </div>
 </div>
