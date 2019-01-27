@@ -38,7 +38,14 @@ class SearchController extends MainController
 
     }
 
-    public function getByCategories(){
+    public function GetAll(){
 
+        // Parametros da função
+        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+        $modelo = $this->load_model('search-model');
+
+        $movies = $modelo->getMovies($modelo->parametros[0]);
+
+        print_r($movies);
     }
 }

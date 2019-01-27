@@ -14,6 +14,18 @@ $(document).ready(function () {
             });
     })
 
+    $('#btnSearch').click(function (){
+        var SearchString = $('input[type=text]#Search').val();
+
+        $.get("http://127.0.0.1/index/?path=",
+            {
+                path: "search/GetAll/" + SearchString,
+            },
+            function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+    })
+
     $('img.voteOk').click(function () {
 
         $.get("http://127.0.0.1/index/?path=",

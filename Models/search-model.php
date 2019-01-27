@@ -65,11 +65,14 @@ class SearchModel extends MainModel
      * Metodo que retorna todos os filmes existentes na BD
      * @return array
      */
-    public function getMovies(){
+    public function getMovies($strSearchData = null){
         $query = null;
 
-        $query = $this->db->query('SELECT * FROM `movies`');
-
+        if ($strSearchData == null){
+            $query = $this->db->query('SELECT * FROM `movies`');
+        } else {
+            $query = $this->db->query('SELECT * FROM `movies` WHERE title LIKE \'%"'.$strSearchData.'"%\' ');
+        }
 
         // Verifica se a consulta está OK
         if ( ! $query ) {
