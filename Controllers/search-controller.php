@@ -38,4 +38,7 @@ class SearchController extends MainController
 
     }
 
+    public function getByCategories(){
+
+    }
 }

@@ -49,7 +49,6 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
                 <form class="form-inline" action="">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Quick Search">
                     <a class="navbar-brand" href="<?php echo HOME_URI . '/search';?>"><img src="../../Images/search.png" alt="Search" width="24" height="24"></a>
                 </form>
             </li>

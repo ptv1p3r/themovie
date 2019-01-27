@@ -8,7 +8,7 @@
 ?>
 
 <!-- Search -->
-<div class="container" style="margin-top:30px">
+<div class="container-fluid" style="margin-top:30px">
     <div class="row justify-content-center">
         <div class="col-auto">
             <input style="width: 485px" type="text" class="form-control" id="" placeholder="Search">
@@ -16,7 +16,6 @@
         <div class="col-auto">
             <button type="submit" class="btn btn-success" ">Search</button>
         </div>
-
     </div>
 </div>
 
@@ -31,7 +30,6 @@
                     <?php foreach ($movieCategories as $category) { ?>
                         <span class="dropdown-item" ><?php echo $category["name"]?></span>
                     <?php }?>
-
                 </div>
             </div>
         </div>
@@ -81,7 +79,7 @@
     <div class="row justify-content-center border-0">
         <table border="1" cellpadding="5" cellspacing="5" style=" width: 500px">
             <tr>
-                <?php for ($i = 0 ; $i < 5 ; $i++) { ?> <!-- passar para 6 -->
+                <?php for ($i = 0 ; $i < 6 ; $i++) { ?>
                     <td align="center">
                         <img src="<?php echo $movies[$i]["poster"]; ?>" height="256" width="192">
                         <p style="margin: 0" align="left"><?php echo $movies[$i]["title"] . "<br>" . $movies[$i]["year"]; ?></p>
@@ -91,7 +89,7 @@
             </tr>
 
             <tr>
-                <?php for ($i = 0 ; $i < 5 ; $i++) { ?> <!-- passar para 6 -->
+                <?php for ($i = 0 ; $i < 6 ; $i++) { ?>
                     <td align="center">
                         <img src="<?php echo $movies[$i]["poster"]; ?>" height="256" width="192">
                         <p style="margin: 0" align="left"><?php echo $movies[$i]["title"] . "<br>" . $movies[$i]["year"]; ?></p>
@@ -115,5 +113,3 @@
         </ul>
     </div>
 </div>
-
-<br>
