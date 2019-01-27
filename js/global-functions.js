@@ -20,12 +20,12 @@ $(document).ready(function () {
 
         $.get("http://127.0.0.1/index/?path=",
             {
-                path: "search/GetAll/" + SearchString,
+                path: "search/getall/" + SearchString,
             },
             function(data, status){
                 //var movideData = JSON.parse(data);
-                var teste = $.parseJSON(data);
-                alert("Data: " + teste.toString() + "\nStatus: " + status);
+                var movideData = $.parseJSON(data);
+                alert("Data: " + movideData[0]['description'] + "\nStatus: " + status);
             }
             );
     })

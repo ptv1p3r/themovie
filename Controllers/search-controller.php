@@ -38,7 +38,7 @@ class SearchController extends MainController
 
     }
 
-    public function GetAll(){
+    public function getall(){
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
@@ -46,7 +46,10 @@ class SearchController extends MainController
 
         $movies = $modelo->getMovies($modelo->parametros[0]);
         //print_r($movies);
+        //require ABSPATH . '/views/search/search-view.php';
+
         echo json_encode($movies);
         //print_r($movies);
+
     }
 }
