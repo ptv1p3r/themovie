@@ -218,9 +218,9 @@
                                         <input class="form-check-input" type="checkbox" id="<?php echo $category["catid"]?>"
                                             <?php foreach ($movieCategories as $movCat) {
                                                 if ($movCat["catid"] == $category["catid"]){
-                                                    if ($movCat["catid"] == $_POST["movid"]) {?>
-                                                        checked
-                                                    <?php }
+//                                                    if ($movCat["catid"] == $_POST["movid"]) {?>
+<!--                                                        checked-->
+<!--                                                    --><?php //}
                                                 }
                                             }?>
                                         <label class="form-check-label" for="<?php echo $category["catid"]?>"><?php echo $category["name"]?></label>
