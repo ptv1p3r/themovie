@@ -32,6 +32,7 @@
                 <div class="dropdown-menu">
                     <?php foreach ($movieCategories as $category) { ?>
                         <span class="dropdown-item" ><?php echo $category["name"]?></span>
+<!--                        temp-->
                     <?php }?>
                 </div>
             </div>
