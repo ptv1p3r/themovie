@@ -19,7 +19,7 @@
     <div class="row " style="margin-bottom: 10%;">
         <?php foreach ($moviesTopRated as $movie) { ?>
             <div class="card" style="margin:10px auto;width: 200px;height: 300px">
-                <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>">
+                <a class="card-link" href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>">
                     <img class="card-img-top" src="<?php echo $movie["poster"]; ?>" alt="<?php echo $movie["title"]; ?>">
                 </a>
                 <div class="card-body">
