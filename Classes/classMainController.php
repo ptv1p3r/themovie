@@ -13,27 +13,21 @@ class MainController
 {
 
     /**
-     * $db
      *
      * base de dados. objeto PDO
-     *
-     * @access public
      */
     public $db;
 
     /**
-     * $title
      *
      * Título das páginas
      *
-     * @access public
      */
     public $title;
 
     /**
-     * $parametros
+     * parametros
      *
-     * @access public
      */
     public $parametros = array();
 

@@ -15,7 +15,6 @@ class MainModel
      *
      * Os dados de formulários de envio.
      *
-     * @access public
      */
     public $form_data;
 
@@ -23,7 +22,6 @@ class MainModel
      *
      * As mensagens de feedback para formulários.
      *
-     * @access public
      */
     public $form_msg;
 
@@ -31,14 +29,12 @@ class MainModel
      *
      * Mensagem de confirmação para apagar dados de formulários
      *
-     * @access public
      */
     public $form_confirma;
 
     /**
-     * O objeto da nossa conexão PDO
+     * O objeto  conexão PDO
      *
-     * @access public
      */
     public $db;
 
@@ -46,7 +42,6 @@ class MainModel
      *
      * O controller que gerou esse modelo
      *
-     * @access public
      */
     public $controller;
 
@@ -54,7 +49,6 @@ class MainModel
      *
      * Parâmetros da URL
      *
-     * @access public
      */
     public $parametros;
 }

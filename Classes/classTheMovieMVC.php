@@ -8,7 +8,6 @@
 /**
  * TheMovieMVC - Gere Models, Controllers e Views
  *
- * @package TheMovieMVC
  */
 class TheMovieMVC
 {

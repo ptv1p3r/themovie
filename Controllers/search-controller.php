@@ -11,6 +11,7 @@
 class SearchController extends MainController
 {
 
+
     /**
      * Carrega a página "/views/search/search-view.php"
      */
@@ -60,14 +61,34 @@ class SearchController extends MainController
     }
 
     public function getall(){
+        $categories = null;
+        $years = null;
+        $ratings = null;
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
         $modelo = $this->load_model('search-model');
 
+        $movieCategories = $modelo->getCategories();
+        $movieYears = $modelo->getYears();
+        $movies = $modelo->getMovies();
+        $movieCount = count($movies);
+
         $movies = $modelo->getMovies($modelo->parametros[0]);
+
+        foreach ($movieCategories as $category) {
+            $categories  .= '<span class="dropdown-item" >'.$category['name'].'</span>';
+        }
+
+        foreach ($movieYears as $year) {
+            $years  .= '<span class="dropdown-item" >'.$year['year'].'</span>';
+        }
+
+        for ($i = 0 ; $i < 9 ; $i++) {
+            $ratings  .= '<span class="dropdown-item" >'.($i+1).'+</span>';
+        }
         //print_r($movies);
-        //require ABSPATH . '/views/search/search-view.php';
+        require ABSPATH . '/views/search/search-view.php';
 
         echo json_encode($movies);
         //print_r($movies);
