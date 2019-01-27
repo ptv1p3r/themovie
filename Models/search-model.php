@@ -71,7 +71,7 @@ class SearchModel extends MainModel
         if ($strSearchData == null){
             $query = $this->db->query('SELECT * FROM `movies`');
         } else {
-            $query = $this->db->query('SELECT * FROM `movies` WHERE title LIKE \'%"'.$strSearchData.'"%\' ');
+            $query = $this->db->query('SELECT * FROM `movies` WHERE title LIKE \'%'.$strSearchData.'%\' ');
         }
 
         // Verifica se a consulta está OK

@@ -12,7 +12,7 @@
     <div class="row justify-content-center">
         <div class="form-group">
             <div class="col-auto">
-                <input style="width: 485px" type="text" class="form-control" id="Search"  placeholder="Search">
+                <input style="width: 485px" type="text" class="form-control" id="Search" name="Search" placeholder="Search">
             </div>
             <div class="col-auto">
                 <button type="submit" id="btnSearch" class="btn btn-success" ">Search</button>

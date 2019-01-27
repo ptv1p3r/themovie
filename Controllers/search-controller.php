@@ -45,7 +45,8 @@ class SearchController extends MainController
         $modelo = $this->load_model('search-model');
 
         $movies = $modelo->getMovies($modelo->parametros[0]);
-
-        print_r($movies);
+        //print_r($movies);
+        echo json_encode($movies);
+        //print_r($movies);
     }
 }
