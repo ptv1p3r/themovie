@@ -15,7 +15,7 @@
 </div>
 <!-- Top Rated -->
 <div class="container-fluid">
-        <p class="text-light text-center">TOP RATED</p>
+    <p class="text-light text-center" style="font-size:160%;"><span class="fas fa-heart" style="color: green;"></span> TOP RATED</p>
     <div class="row " style="margin-bottom: 10%;">
         <?php foreach ($moviesTopRated as $movie) { ?>
             <div class="card" style="margin:10px auto;width: 200px;height: 300px">
@@ -33,7 +33,7 @@
 </div>
 <!-- Top Downloaded -->
 <div class="container-fluid">
-    <p class="text-light text-center">TOP DOWNLOADED</p>
+    <p class="text-light text-center" style="font-size:160%;"><span class="fas fa-star" style="color: orange;"></span> TOP DOWNLOADED</p>
     <div class="row" style="margin-bottom: 10%;">
         <?php foreach ($moviesTopDownloaded as $movie) { ?>
             <div class="card" style="margin:10px auto;width: 200px;height: 300px">
@@ -51,7 +51,7 @@
 </div>
 <!-- Last Added -->
 <div class="container-fluid">
-    <p class="text-light text-center">LAST ADDED</p>
+    <p class="text-light text-center" style="font-size:160%;"><span class="fas fa-clock" ></span> LAST ADDED</p>
     <div class="row" style="margin-bottom: 10%;">
         <?php foreach ($moviesLastAdded as $movie) { ?>
             <div class="card" style="margin:10px auto;width: 200px;height: 300px">
