@@ -103,6 +103,7 @@ class SearchModel extends MainModel
         }
         // Preenche a tabela com os dados
         return $query->fetchAll();
+
     }
 }
 ?>
