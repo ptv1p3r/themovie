@@ -6,6 +6,7 @@
  * Time: 15:28
  */
 ?>
+<?php if ( ! defined('ABSPATH')) exit; ?>
 
 
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -13,7 +14,9 @@
     <a class="navbar-brand mr-1" href="<?php echo HOME_URI . '/admin/movie';?>"> <img src="<?php echo HOME_URI . '/Images/logo_black.png';?>" alt="" width="48">The Real Movie Database</a>
 
     <!-- Spacing -->
-    <a class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></a>
+    <a class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+        <a href="<?php echo HOME_URI . '/home';?>" target="_blank"><img src="../../Images/home.png" alt="" width="48"></a>
+    </a>
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
@@ -23,9 +26,9 @@
                 <img src="../../Images/user.png" alt="" height="48">
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="<?php echo HOME_URI . '/admin/settings';?>">Settings</a>
+                <a class="dropdown-item" href="<?php echo HOME_URI . '/admin/settings';?>"><i class="fas fa-cog"></i> Settings</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt"></i> Logout</a>
             </div>
         </li>
     </ul>
@@ -38,8 +41,6 @@
         <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/movie/1';?>"><span>Tabela CRUD Fimes</span></a></li>
         <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/comment/1';?>"><span>Tabela CRUD Comment</span></a></li>
         <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/category/1';?>"><span>Tabela CRUD Categorias</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/rating/1';?>"><span>Tabela CRUD Rating</span></a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo HOME_URI . '/admin/quality/1';?>"><span>Tabela CRUD Qualidade</span></a></li>
     </ul>
 
     <div id="content-wrapper">

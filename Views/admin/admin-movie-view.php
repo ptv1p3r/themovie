@@ -6,6 +6,7 @@
  * Time: 15:28
  */
 ?>
+<?php if ( ! defined('ABSPATH')) exit; ?>
 
 
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
@@ -13,7 +14,9 @@
         <a class="navbar-brand mr-1" href="<?php echo HOME_URI . '/admin/movie';?>"> <img src="<?php echo HOME_URI . '/Images/logo_black.png';?>" alt="" width="48">The Real Movie Database</a>
 
         <!-- Spacing -->
-        <a class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></a>
+        <a class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <a href="<?php echo HOME_URI . '/home';?>" target="_blank"><img src="../../Images/home.png" alt="" width="48"></a>
+        </a>
 
         <!-- Navbar -->
         <ul class="navbar-nav ml-auto ml-md-0">
@@ -23,9 +26,9 @@
                     <img src="../../Images/user.png" alt="" height="48">
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="<?php echo HOME_URI . '/admin/settings';?>">Settings</a>
+                    <a class="dropdown-item" href="<?php echo HOME_URI . '/admin/settings';?>"><i class="fas fa-cog"></i> Settings</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </li>
         </ul>
@@ -100,17 +103,31 @@
                 </table>
 
                 <div class="clearfix">
-                    <div class="hint-text">Showing <b><?php if (10*$parametros[0] >= count($movies)) {
+                    <div class="hint-text">Showing <b>
+                            <?php if (10*$parametros[0] >= count($movies)) {
                                 echo count($movies);
                             } else {
-                                echo 10*$parametros[0];
-                            }?></b> out of <b><?php echo count($movies)?></b> entries</div>
+                                if ($parametros[0] == null || $parametros[0] == "1") {
+                                    if (10 >= count($movies)) {
+                                        echo count($movies);
+                                    } else {
+                                        echo 10;
+                                    }
+                                } else {
+                                    echo 10*$parametros[0];
+                                }
+                            }?>
+                        </b> out of <b><?php echo count($movies)?></b> entries</div>
                         <ul class="pagination">
-                            <?php for ($i = 1 ; $i <= ceil(count($movies)/10) ; $i++) { ?>
-                            <li class="page-item <?php if ($parametros[0] == $i) {
-                                echo "active";
-                            }?>"><a href="<?php echo HOME_URI . '/admin/category/' . $i;?>" class="page-link"><?php echo $i?></a></li>
-                            <?php }?>
+                            <?php if ($parametros[0] == null) { ?>
+                                <li class="page-item active"><a href="<?php echo HOME_URI . '/admin/movie/' . 1;?>" class="page-link">1</a></li>
+                            <?php } else {
+                                for ($i = 1 ; $i <= ceil(count($movies)/10) ; $i++) { ?>
+                                <li class="page-item <?php if ($parametros[0] == $i) {
+                                    echo "active";
+                                }?>"><a href="<?php echo HOME_URI . '/admin/movie/' . $i;?>" class="page-link"><?php echo $i?></a></li>
+                                <?php }
+                            }?>
                         </ul>
                 </div>
             </div>
