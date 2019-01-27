@@ -6,21 +6,21 @@
  * Time: 14:09
  */
 ?>
-<form>
 <!-- Search -->
 <div class="container-fluid" style="margin-top:30px">
     <div class="row justify-content-center">
-        <div class="form-group">
-            <div class="col-auto">
-                <input style="width: 485px" type="text" class="form-control" id="Search" name="Search" placeholder="Search">
+        <form>
+            <div class="input-group">
+                <div class="col-auto">
+                    <input style="width: 485px" type="text" class="form-control" id="Search" name="Search" placeholder="Search">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" id="btnSearch" class="btn btn-success">Search</button>
+                </div>
             </div>
-            <div class="col-auto">
-                <button type="submit" id="btnSearch" class="btn btn-success">Search</button>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
-</form>
 
 <!-- Filters -->
 <div class="container-fluid" style="margin-top:30px">
@@ -117,11 +117,25 @@
                         </div>
                         </div>
                         <div class="container-fluid">
-                        <div class="row" style="margin-bottom: 10%;">
+                        <div class="row" style="margin-bottom: 5%;">
                     <?php }
                 }
             }?>
         </div>
+    </div>
+
+    <!-- Upper Pagination -->
+    <div class="row justify-content-center">
+        <ul class="pagination">
+            <?php for ($i = 1; $i <= ceil($movieCount / 8); $i++) { ?>
+                <li class="page-item <?php if ($parametros[0] == $i) {
+                    echo "active";
+                } else if ($parametros[0] == null && $i==1) {
+                    echo "active";
+                } ?>">
+                    <a href="<?php echo HOME_URI . '/search/index/' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
+            <?php }?>
+        </ul>
     </div>
 </div>
 <br>
