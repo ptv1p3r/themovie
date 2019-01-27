@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Jan-2019 às 23:24
+-- Generation Time: 27-Jan-2019 às 01:49
 -- Versão do servidor: 10.1.37-MariaDB
 -- versão do PHP: 7.3.0
 
@@ -54,6 +54,27 @@ INSERT INTO `categories` (`catid`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `comments`
+--
+
+CREATE TABLE `comments` (
+  `comid` int(11) NOT NULL,
+  `user` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `creation_timestamp` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `comments`
+--
+
+INSERT INTO `comments` (`comid`, `user`, `description`, `creation_timestamp`) VALUES
+(1, 'Ryan Haywood', 'Barton waited twenty always repair in within we do. An delighted offending curiosity my is dashwoods at. Boy prosperous increasing surrounded companions her nor advantages sufficient put. John on time down give meet help as of.', '2019-01-26 23:25:12'),
+(2, 'Pedro Roldan', 'yayds fdfkjsdlkfjsdlkfj\r\nsfgfdgsdfgd\r\ngffsdgdfg', '2019-01-26 01:25:12');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `movies`
 --
 
@@ -87,7 +108,7 @@ INSERT INTO `movies` (`movid`, `title`, `year`, `description`, `rating_1`, `rati
 (2, 'Hunter Killer', 2018, 'A U.S. submarine, the USS Tampa Bay, vanishes while shadowing a Russian Akula-class submarine in the Arctic. Rear Admiral John Fisk sends a Virginia-class submarine, the USS Arkansas, under the command of newly-promoted and unorthodox Commander Joe Glass to investigate. At the same time, a Navy SEAL team under the command of Lieutenant Bill Beaman is sent in to discreetly observe a Russian naval base, but their mission is swiftly complicated when Martinelli, the team\'s new DM recruit, is rendered unconscious during the HALO drop. When they arrive at the naval base, they witness defense minister Dmitri Durov conducting a coup d\'eta and taking Russian President Zakarin prisoner, and swiftly realize that Durov intends to trigger a war.', 7.2, 0, 0, 0, 'https://www.youtube.com/embed/mnP_z3qXDCQ?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3', 'https://img.yts.am/assets/images/movies/hunter_killer_2018/medium-cover.jpg', 'https://img.yts.am/assets/images/movies/hunter_killer_2018/large-screenshot2.jpg', 'https://img.yts.am/assets/images/movies/hunter_killer_2018/large-screenshot3.jpg', 1, 0, 1, 'https://rarbgproxied.org/download.php?id=eivnw9a&f=Hunter.Killer.2018.BRRip.XviD.AC3-XVID-[rarbg.to].torrent', '2019-01-15 18:25:12', '2019-01-26 20:19:08'),
 (3, 'First Man', 2018, 'A Biopic on the life of the legendary American Astronaut Neil Armstrong from 1961-1969, on his journey to becoming the first human to walk the moon. Exploring the sacrifices and costs on the Nation and Neil himself, during one of the most dangerous missions in the history of space travel.', 4.5, 0, 0, 0, 'https://www.youtube.com/embed/O9Y7DTCn7Cc?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3', 'https://img.yts.am/assets/images/movies/first_man_2018/medium-cover.jpg', 'https://img.yts.am/assets/images/movies/first_man_2018/large-screenshot2.jpg', 'https://img.yts.am/assets/images/movies/first_man_2018/large-screenshot3.jpg', 2, 2, 1, 'https://rarbgproxied.org/download.php?id=ihtuy72&f=First.Man.2018.IMAX.720p.BluRay.H264.AAC-RARBG-[rarbg.to].torrent', '2018-12-25 23:41:35', '2019-01-26 20:16:52'),
 (4, 'The Last Man', 2018, 'Tov Matheson is a war veteran with post traumatic stress disorder who perceives that the end of the world is coming. After establishing a relationship with a dubious Messiah, he leaves his normal life to begin the construction of a shelter underground and trains himself, in an extreme way, at the cost of everything in his life. When he also believes the Messiah, something extraordinary happens.', 5.7, 0, 0, 0, 'https://www.youtube.com/embed/NKgroygFaeA?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3', 'https://img.yts.am/assets/images/movies/the_last_man_2018/medium-cover.jpg', 'https://img.yts.am/assets/images/movies/the_last_man_2018/large-screenshot2.jpg', 'https://img.yts.am/assets/images/movies/the_last_man_2018/large-screenshot3.jpg', 1, 0, 1, 'https://rarbgproxied.org/download.php?id=2e8csm4&f=The.Last.Man.2018.WEB-DL.XviD.AC3-FGT-[rarbg.to].torrent', '2019-01-01 09:15:22', '2019-01-26 16:48:59'),
-(5, 'Close', 2019, 'A bodyguard and counter-terrorism expert Sam takes a job protecting Zoe a rich young heiress. Neither party is keen on the arrangement until a violent kidnap forces them to go on the run.', 8.2, 0, 0, 0, 'https://www.youtube.com/embed/qWKsiHEpiJM?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3', 'https://img.yts.am/assets/images/movies/close_2019/medium-cover.jpg', 'https://img.yts.am/assets/images/movies/close_2019/large-screenshot2.jpg', 'https://img.yts.am/assets/images/movies/close_2019/large-screenshot3.jpg', 26, -2, 43, 'https://rarbgproxied.org/download.php?id=vd8hsfk&f=Close.2019.720p.WEBRip.x264-STRiFE-[rarbg.to].torrent', '2019-01-19 20:32:10', '2019-01-26 19:33:09');
+(5, 'Close', 2019, 'A bodyguard and counter-terrorism expert Sam takes a job protecting Zoe a rich young heiress. Neither party is keen on the arrangement until a violent kidnap forces them to go on the run.', 8.2, 0, 0, 0, 'https://www.youtube.com/embed/qWKsiHEpiJM?rel=0&wmode=transparent&border=0&autoplay=1&iv_load_policy=3', 'https://img.yts.am/assets/images/movies/close_2019/medium-cover.jpg', 'https://img.yts.am/assets/images/movies/close_2019/large-screenshot2.jpg', 'https://img.yts.am/assets/images/movies/close_2019/large-screenshot3.jpg', 46, -2, 43, 'https://rarbgproxied.org/download.php?id=vd8hsfk&f=Close.2019.720p.WEBRip.x264-STRiFE-[rarbg.to].torrent', '2019-01-19 20:32:10', '2019-01-26 23:36:15');
 
 -- --------------------------------------------------------
 
@@ -117,6 +138,26 @@ INSERT INTO `movies_categories` (`intid`, `movid`, `catid`) VALUES
 (9, 5, 1),
 (10, 5, 8);
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `movies_comments`
+--
+
+CREATE TABLE `movies_comments` (
+  `intid` int(11) NOT NULL,
+  `movid` int(11) NOT NULL,
+  `comid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `movies_comments`
+--
+
+INSERT INTO `movies_comments` (`intid`, `movid`, `comid`) VALUES
+(1, 5, 1),
+(2, 5, 2);
+
 --
 -- Indexes for dumped tables
 --
@@ -126,6 +167,12 @@ INSERT INTO `movies_categories` (`intid`, `movid`, `catid`) VALUES
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`catid`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
+  ADD PRIMARY KEY (`comid`);
 
 --
 -- Indexes for table `movies`
@@ -140,6 +187,12 @@ ALTER TABLE `movies_categories`
   ADD PRIMARY KEY (`intid`);
 
 --
+-- Indexes for table `movies_comments`
+--
+ALTER TABLE `movies_comments`
+  ADD PRIMARY KEY (`intid`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -148,6 +201,12 @@ ALTER TABLE `movies_categories`
 --
 ALTER TABLE `categories`
   MODIFY `catid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `comid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `movies`
@@ -160,6 +219,12 @@ ALTER TABLE `movies`
 --
 ALTER TABLE `movies_categories`
   MODIFY `intid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `movies_comments`
+--
+ALTER TABLE `movies_comments`
+  MODIFY `intid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

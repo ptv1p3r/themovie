@@ -25,7 +25,7 @@
             <div class="text-light">In: <i>720p.BlueRay, 1080p.Web</i></div>
             <br style="line-height: 160px">
             <p class="text-muted" id="imdb"><img src="../../Images/logo-imdb.svg"  alt="" width="24" height="24"><?php echo $movieData[0]["rating_1"];?><span style="color: green;"><i class="fas fa-star"></i></span></p>
-            <p class="text-muted" id="voteCount"><span style="color: green;"><i class="fas fa-heart"></i></span><i>Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></p>
+            <span class="fas fa-heart" style="color: green;"><p class="text-muted" id="voteCount"><i>Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></p></span>
             <p class="text-muted" id="DownloadCount"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
             <p class="text-muted"><i><?php echo $movieData[0]["update_timestamp"];?></i></p>
         </div>
@@ -74,57 +74,7 @@
     <div class="row">
         <!-- Comment Section -->
         <div class="col-md-6">
-            <div class="card text-black-50 bg-black post panel-shadow">
-                <!-- Comment -->
-                <div class="card-header">
-                    <!-- User Pic -->
-                    <div class="float-left image">
-                        <img src="../../Images/user.png" alt="" width="48"
-                             height="48">
-                    </div>
-
-                    <!-- Username & Post time -->
-                    <div class="float-left meta" style="margin-left: 10px">
-                        <div class="title h5"><b>Ryan Haywood</b>
-                            made a post.</div>
-                        <h6 class="text-muted time">1 minute ago</h6>
-                    </div>
-                </div>
-
-                <!-- Comment -->
-                <div class="card-body">
-                    <p style="margin: 0">Barton waited twenty always repair in within we do.
-                        An delighted offending curiosity my is dashwoods at.
-                        Boy prosperous increasing surrounded companions her nor advantages sufficient put.
-                        John on time down give meet help as of.</p>
-                </div>
-            </div>
-            <br>
-            <div class="card text-black-50 bg-black post panel-shadow">
-                <!-- Comment -->
-                <div class="card-header">
-                    <!-- User Pic -->
-                    <div class="float-left image">
-                        <img src="../../Images/user.png" alt="" width="48"
-                             height="48">
-                    </div>
-
-                    <!-- Username & Post time -->
-                    <div class="float-left meta" style="margin-left: 10px">
-                        <div class="title h5"><b>Ryan Haywood</b>
-                            made a post.</div>
-                        <h6 class="text-muted time">1 minute ago</h6>
-                    </div>
-                </div>
-
-                <!-- Comment -->
-                <div class="card-body">
-                    <p style="margin: 0">Barton waited twenty always repair in within we do.
-                        An delighted offending curiosity my is dashwoods at.
-                        Boy prosperous increasing surrounded companions her nor advantages sufficient put.
-                        John on time down give meet help as of.</p>
-                </div>
-            </div>
+            <?php echo $comments;?>
         </div>
 
         <div class="row">

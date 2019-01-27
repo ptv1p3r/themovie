@@ -17,6 +17,7 @@ class DetailController extends MainController
         // Título da página
         $this->title = 'Detail';
         $categories = null;
+        $comments = null;
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
@@ -25,6 +26,7 @@ class DetailController extends MainController
 
         $movieData = $modelo->getMovieById($modelo->parametros[0]);
         $movieCategories = $modelo->getMovieCategories($modelo->parametros[0]);
+        $movieComments = $modelo->getMovieComments($modelo->parametros[0]);
 
         foreach ($movieCategories as $category) {
                 $categories .= $category["name"].' / ';
@@ -32,6 +34,20 @@ class DetailController extends MainController
             // remove o ultimo /
         $categories = substr_replace($categories,"",strrpos($categories, "/"));
 
+        foreach ($movieComments as $comment) {
+            $comments   .= "<div class=\"card text-black-50 bg-black post panel-shadow\">";
+            $comments   .= "<div class=\"card-header\">";
+            $comments   .= "<div class=\"float-left image\">";
+            $comments   .= "<img src=\"../../Images/user.png\" alt=\"\" width=\"48\" height=\"48\">";
+            $comments   .= "</div>";
+            $comments   .= "<div class=\"float-left meta\" style=\"margin-left: 10px\">";
+            $comments   .= "<div class=\"title h5\"><b>" .$comment["user"]. "</b> made a post</div>";
+            $comments   .= "<h6 class=\"text-muted time\">1 minute ago</h6>";
+            $comments   .= "</div></div>";
+            $comments   .= "<div class=\"card-body\">";
+            $comments   .= "<p style=\"margin: 0\">" .$comment["description"]. "</p>";
+            $comments   .= "</div></div><br>";
+        }
 
         /** Carrega os arquivos do view **/
 
@@ -90,5 +106,6 @@ class DetailController extends MainController
 
         print($movieVoteCount[0]["total"]);
     }
+
 
 }
