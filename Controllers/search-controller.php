@@ -17,6 +17,9 @@ class SearchController extends MainController
     public function index() {
         // Título da página
         $this->title = 'Search';
+        $categories = null;
+        $years = null;
+        $ratings = null;
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
@@ -28,12 +31,17 @@ class SearchController extends MainController
         $movies = $modelo->getMovies();
         $movieCount = count($movies);
 
-        if ($parametros[0] == null || $parametros[0] == "") {
-            $moviesTable = $modelo->getMoviesTable(1);
-        } else {
-            $moviesTable = $modelo->getMoviesTable($modelo->$parametros[0]);
+        foreach ($movieCategories as $category) {
+            $categories  .= '<span class="dropdown-item" >'.$category['name'].'</span>';
         }
 
+        foreach ($movieYears as $year) {
+            $years  .= '<span class="dropdown-item" >'.$year['year'].'</span>';
+        }
+
+        for ($i = 0 ; $i < 9 ; $i++) {
+            $ratings  .= '<span class="dropdown-item" >'.($i+1).'+</span>';
+        }
 
         /** Carrega os arquivos do view **/
 

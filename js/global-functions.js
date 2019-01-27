@@ -23,7 +23,6 @@ $(document).ready(function () {
                 path: "search/getall/" + SearchString,
             },
             function(data, status){
-                //var movideData = JSON.parse(data);
                 var movideData = $.parseJSON(data);
                 alert("Data: " + movideData[0]['description'] + "\nStatus: " + status);
             }
