@@ -50,8 +50,28 @@ class AdminModel extends MainModel {
         } else {
             $startNumber = ($page*10)-10;
         }
-        $query = $this->db->query('SELECT * FROM `categories` limit ' . $startNumber.',10');
+        $query = $this->db->query('SELECT * FROM `categories` limit ' . $startNumber .',10');
         //}
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    /**
+     * Metodo que retorna o filme pelo id
+     * @return array
+     */
+    public function getMovieById($intMovieId = null){
+        $query = null;
+
+        if ($intMovieId != null){
+            $query = $this->db->query('SELECT * FROM `movies` WHERE movid = '.$intMovieId);
+        }
+
 
         // Verifica se a consulta está OK
         if ( ! $query ) {

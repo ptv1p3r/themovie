@@ -54,6 +54,19 @@ $(document).ready(function () {
             });
     })
 
+    $('#editMovieModal').click(function (){
+        $.get("http://127.0.0.1/index/?path=",
+            {
+                path: "admin/getMovie/" + $(this).data('movid'),
+            },
+            function(data, status){
+                var dataReceived = data.split("#");
+                $("#movid").text(dataReceived[0]);
+                $("#title").text(dataReceived[1]);
+                $("#year").text(dataReceived[2]);
+            });
+    })
+
 });
 
 $(document).ready(function(){
@@ -91,8 +104,8 @@ $(document).on("click", "a", function () {
     $("#description").val($(this).data('description'));
 });
 
-$(document).on("click", "a", function () {
-    $("#movid").val($(this).data('movid'));
-    $("#title").val($(this).data('title'));
-    $("#year").val($(this).data('year'));
-});
+// $(document).on("click", "a", function () {
+//     $("#movid").val($(this).data('movid'));
+//     $("#title").val($(this).data('title'));
+//     $("#year").val($(this).data('year'));
+// });

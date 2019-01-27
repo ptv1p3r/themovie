@@ -106,6 +106,7 @@
 
                 </table>
 
+                <!-- Pagination -->
                 <div class="clearfix">
                     <div class="hint-text">Showing <b>
                             <?php if (10*$parametros[0] >= count($movies)) {
@@ -200,7 +201,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Movie</label>
-                                <input id="movid" type="text" class="form-control" disabled>
+                                <input id="movid" type="text" class="form-control" value="<?php $movieById[0]["movid"]?>" disabled>
                             </div>
                             <div class="form-group">
                                 <label>Title</label>
@@ -210,7 +211,7 @@
                                 <label>Year</label>
                                 <input id="year" type="number" class="form-control" required>
                             </div>
-                            <label>Categories</label>
+                            <label>Categories</label>   <!-- fill categories -->
                             <div class="form-group" style="padding-left: 40px" >
                                 <?php foreach ( $categories as $category) {?>
 

@@ -47,6 +47,8 @@ class AdminController extends MainController
         $categories = $modelo->getCategories();
         $movieCategories = $modelo->getMovieCategories();
 
+        $movieById = $modelo->getMovieById($modelo->parametros[0]);
+
 
         /** Carrega os arquivos do view **/
 
@@ -122,6 +124,24 @@ class AdminController extends MainController
 
         require ABSPATH . '/views/_includes/footer.php';
 
+    }
+
+    public function movieById(){
+        // Título da página
+
+        // Parametros da função
+        $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
+
+        $modelo = $this->load_model('admin-model');
+
+        $ReturnData = null;
+
+        $ReturnData = $modelo->getDownloadLink($modelo->parametros[0]);
+
+        $data = $ReturnData[0]["movid"] . "#" . $ReturnData[0]["title"] . "#" .
+            $ReturnData[0]["year"];
+
+        echo $ReturnData;
     }
 
     //login logout
