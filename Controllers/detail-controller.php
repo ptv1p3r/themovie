@@ -42,7 +42,7 @@ class DetailController extends MainController
             $comments   .= "</div>";
             $comments   .= "<div class=\"float-left meta\" style=\"margin-left: 10px\">";
             $comments   .= "<div class=\"title h5\"><b>" .$comment["user"]. "</b> made a post</div>";
-            $comments   .= "<h6 class=\"text-muted time\">1 minute ago</h6>";
+            $comments   .= "<h6 class=\"text-muted time\">Posted ".timeCalculation($comment["creation_timestamp"])." ago</h6>";
             $comments   .= "</div></div>";
             $comments   .= "<div class=\"card-body\">";
             $comments   .= "<p style=\"margin: 0\">" .$comment["description"]. "</p>";
