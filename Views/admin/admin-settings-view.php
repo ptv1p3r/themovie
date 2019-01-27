@@ -15,7 +15,7 @@
 
     <!-- Spacing -->
     <a class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <a href="<?php echo HOME_URI . '/home';?>" target="_blank"><img src="../../Images/home.png" alt="" width="48"></a>
+        <a href="<?php echo HOME_URI . '/home';?>" target="_blank"><img src="../../Images/home.png" alt="" width="24"></a>
     </a>
 
     <!-- Navbar -->
