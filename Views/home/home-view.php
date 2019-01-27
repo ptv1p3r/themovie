@@ -25,7 +25,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-white"><?php echo $movie["title"]; ?></h5>
                     <p class="card-text text-muted"><?php echo $movie["year"]; ?></p>
-                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>" class="btn btn-primary">Details</a>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>" class="btn btn-success">Details</a>
                 </div>
             </div>
         <?php } ?>
@@ -43,7 +43,7 @@
                 <div class="card-body" >
                     <h5 class="card-title text-white"><?php echo $movie["title"]; ?></h5>
                     <p class="card-text text-muted"><?php echo $movie["year"]; ?></p>
-                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>" class="btn btn-primary">Details</a>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>" class="btn btn-success">Details</a>
                 </div>
             </div>
         <?php } ?>
@@ -61,7 +61,7 @@
                 <div class="card-body">
                     <h5 class="card-title text-white"><?php echo $movie["title"]; ?></h5>
                     <p class="card-text text-muted"><?php echo $movie["year"]; ?></p>
-                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>" class="btn btn-primary">Details</a>
+                    <a href="<?php echo HOME_URI . '/detail/view/' . $movie["movid"];?>" class="btn btn-success">Details</a>
                 </div>
             </div>
         <?php } ?>
