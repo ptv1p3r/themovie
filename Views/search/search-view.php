@@ -13,30 +13,21 @@
         <div class="col-auto">
             <input style="width: 485px" type="text" class="form-control" id="" placeholder="Search">
         </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-success" ">Search</button>
+        </div>
+
     </div>
 </div>
 
 <!-- Filters -->
-<div class="container" style="margin-top:30px">
+<div class="container-fluid" style="margin-top:30px">
     <div class="row justify-content-center">
-        <!-- Video Quality -->
-        <div class="col-md-auto">
-            <div class="dropdown">
-                <button style="width: 200px" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Quality</button>
-                <div class="dropdown-menu">
-                    <span class="dropdown-item" >480p</span>
-                    <span class="dropdown-item" >720p</span>
-                    <span class="dropdown-item" >1080p</span>
-                </div>
-            </div>
-        </div>
-
         <!-- Video Genere -->
         <div class="col-md-auto">
             <div class="dropdown">
                 <button style="width: 200px" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Genere</button>
                 <div class="dropdown-menu">
-
                     <?php foreach ($movieCategories as $category) { ?>
                         <span class="dropdown-item" ><?php echo $category["name"]?></span>
                     <?php }?>
@@ -72,7 +63,7 @@
 </div>
 
 <!-- Movies -->
-<div class="container" style="margin-top:30px">
+<div class="container-fluid" style="margin-top:30px">
     <!-- Upper Pagination -->
     <div class="row justify-content-center">
         <ul class="pagination justify-content-center" style="margin:30px">
