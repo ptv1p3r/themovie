@@ -44,21 +44,30 @@ class SearchController extends MainController
             $ratings  .= '<span class="dropdown-item" >'.($i+1).'+</span>';
         }
 
-        if ($parametros[0] == null || $parametros[0] == "") {
+        $startCount = null;
+
+        if ($parametros[0] == null || $parametros[0] == "" || $parametros[0] == "1") {
             if ($movieCount < 8) {
                 $count = $movieCount;
             } else {
                 $count = 8;
             }
 
-            for ($i = 0; $i < $count; $i++) {
-                $moviesTable[$i] = $movies[$i];
-            }
+            $startCount = 0;
+
         } else {
-            for ($i = 8 * $parametros[0] - 8 ; $i < 8 *  $parametros[0] ; $i++){
-                $moviesTable[$i] = $movies[$i];
+
+            if ((8 * $parametros[0]) > $movieCount) {
+                $count = $movieCount;
+            } else {
+                $count = 8 * $parametros[0];
             }
+
+            $startCount = 8 * $parametros[0] - 8;
+
         }
+
+
 
         /** Carrega os arquivos do view **/
 

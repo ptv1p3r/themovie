@@ -15,7 +15,7 @@
                 <input style="width: 485px" type="text" class="form-control" id="Search" name="Search" placeholder="Search">
             </div>
             <div class="col-auto">
-                <button type="submit" id="btnSearch" class="btn btn-success" ">Search</button>
+                <button type="submit" id="btnSearch" class="btn btn-success">Search</button>
             </div>
         </div>
     </div>
@@ -71,7 +71,7 @@
                     } else if ($parametros[0] == null && $i==1) {
                         echo "active";
                     } ?>">
-                        <a href="<?php echo HOME_URI . '/search/' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
+                        <a href="<?php echo HOME_URI . '/search/index/' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
             <?php }?>
         </ul>
     </div>
@@ -81,63 +81,47 @@
 
     <!-- Movies -->
     <div class="container-fluid">
-<!--        <div class="row justify-content-center border-0">-->
-            <div class="row " style="margin-bottom: 10%">
-                <?php if (count($moviesTable) <= 4) {
-                    for ($i = 0; $i < count($moviesTable); $i++) { ?>
-                        <div class="card" style="margin:10px auto;width: 200px;height: 300px">
-                            <a href="<?php echo HOME_URI . '/detail/view/' . $moviesTable[$i]["movid"]; ?>">
-                                <img class="card-img-top" src="<?php echo $moviesTable[$i]["poster"]; ?>"
-                                     alt="<?php echo $moviesTable[$i]["title"]; ?>">
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title text-white"><?php echo $moviesTable[$i]["title"]; ?></h5>
-                                <p class="card-text text-muted"><?php echo $moviesTable[$i]["year"]; ?></p>
-                                <a href="<?php echo HOME_URI . '/detail/view/' . $moviesTable[$i]["movid"]; ?>"
-                                    class="btn btn-success">Detail</a>
-                            </div>
+        <div class="row " style="margin-bottom: 10%">
+            <?php if (count($movies) <= 4) {
+                for ($i = 0; $i < count($movies); $i++) { ?>
+                    <div class="card" style="margin:10px auto;width: 200px;height: 300px">
+                        <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"]; ?>">
+                            <img class="card-img-top" src="<?php echo $movies[$i]["poster"]; ?>"
+                                 alt="<?php echo $movies[$i]["title"]; ?>">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title text-white"><?php echo $movies[$i]["title"]; ?></h5>
+                            <p class="card-text text-muted"><?php echo $movies[$i]["year"]; ?></p>
+                            <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"]; ?>"
+                                class="btn btn-success">Detail</a>
                         </div>
-                    <?php } ?>
+                    </div>
+                <?php } ?>
 
-                <?php } else {
-                    for ($i = 0; $i < count($moviesTable); $i++) { ?>
-                            <div class="card" style="margin:10px auto;width: 200px;height: 300px">
-                                <a href="<?php echo HOME_URI . '/detail/view/' . $moviesTable[$i]["movid"]; ?>">
-                                    <img class="card-img-top" src="<?php echo $moviesTable[$i]["poster"]; ?>"
-                                         alt="<?php echo $moviesTable[$i]["title"]; ?>">
-                                </a>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white"><?php echo $moviesTable[$i]["title"]; ?></h5>
-                                    <p class="card-text text-muted"><?php echo $moviesTable[$i]["year"]; ?></p>
-                                    <a href="<?php echo HOME_URI . '/detail/view/' . $moviesTable[$i]["movid"]; ?>"
-                                       class="btn btn-success">Detail</a>
-                                </div>
-                            </div>
+            <?php } else {
+                for ($i = $startCount ; $i < $count; $i++) { ?>
+                    <div class="card" style="margin:10px auto;width: 200px;height: 300px">
+                        <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"]; ?>">
+                            <img class="card-img-top" src="<?php echo $movies[$i]["poster"]; ?>"
+                                 alt="<?php echo $movies[$i]["title"]; ?>">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title text-white"><?php echo $movies[$i]["title"]; ?></h5>
+                            <p class="card-text text-muted"><?php echo $movies[$i]["year"]; ?></p>
+                            <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"]; ?>"
+                               class="btn btn-success">Detail</a>
+                        </div>
+                    </div>
 
-                        <?php if (($i + 1) % 4 == 0) { ?>
-                            </div>
-                            </div>
-                            <div class="container-fluid">
-                            <div class="row" style="margin-bottom: 10%;">
-                        <?php }
-                    }
-                }?>
-            </div>
-<!--        </div>-->
+                    <?php if (($i + 1) % 4 == 0) { ?>
+                        </div>
+                        </div>
+                        <div class="container-fluid">
+                        <div class="row" style="margin-bottom: 10%;">
+                    <?php }
+                }
+            }?>
+        </div>
     </div>
-
-    <!-- Lower Pagination -->
-<!--    <div class="row justify-content-center">-->
-<!--        <ul class="pagination">-->
-<!--            --><?php //for ($i = 1; $i <= ceil($movieCount / 8); $i++) { ?>
-<!--                <li class="page-item --><?php //if ($parametros[0] == $i) {
-//                    echo "active";
-//                } else if ($parametros[0] == null && $i==1) {
-//                    echo "active";
-//                } ?><!--">-->
-<!--                    <a href="--><?php //echo HOME_URI . '/search/' . $i; ?><!--" class="page-link">--><?php //echo $i ?><!--</a></li>-->
-<!--            --><?php //}?>
-<!---->
-<!--        </ul>-->
-<!--    </div>-->
 </div>
+<br>
