@@ -1,6 +1,6 @@
 body {
     color: #566787;
-    background: #f5f5f5;
+    background: #1d1d1d;
     font-family: 'Varela Round', sans-serif;
     font-size: 13px;
 }
@@ -117,11 +117,19 @@ table.table .avatar {
     color: #666;
 }
 .pagination li.active a, .pagination li.active a.page-link {
-    background: #03A9F4;
+    background: #28a745;
 }
 .pagination li.active a:hover {
-    background: #0397d6;
+    background: #28a745;
 }
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
 .pagination li.disabled i {
     color: #ccc;
 }

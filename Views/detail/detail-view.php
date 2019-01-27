@@ -10,28 +10,29 @@
 
 <div class="container-fluid" style="margin-top:30px">
     <div class="row">
+        <div class="col-sm-1"></div>
         <!-- Movie Picture -->
         <div class="card" style="margin:10px auto;width: 200px;height: 300px">
                 <img class="card-img-top" src="<?php echo $movieData[0]["poster"]; ?>" alt="<?php echo $movieData[0]["title"]; ?>">
             <div class="card-body">
                 <input type="hidden" id="movieId" name="movieId" value="<?php echo $movieData[0]["movid"]; ?>" />
-                <button type="button"  id="btnDownload" class="btn btn-success">Download</button>
+                <button type="button"  id="btnDownload" class="btn btn-success" style="width: 160px">Download</button>
             </div>
         </div>
 
         <!-- Movie Info -->
-        <div class="col-sm-3">
+        <div class="col-sm-2">
             <br>
             <div class="text-light">In: <i>720p.BlueRay, 1080p.Web</i></div>
-            <br style="line-height: 160px">
+            <br style="line-height: 120px">
             <p class="text-muted" id="imdb"><img src="../../Images/logo-imdb.svg"  alt="" width="24" height="24"> <?php echo $movieData[0]["rating_1"];?> <span style="color: green;"><i class="fas fa-star"></i></span></p>
-            <span class="fas fa-heart" style="color: green;"><p class="text-muted" id="voteCount"><i>Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></p></span>
+            <p class="fas fa-heart" style="color: green;"><span class="text-muted" id="voteCount"><i> Voted <?php echo $movieData[0]["vote_ok"] + $movieData[0]["vote_notok"];?> times</i></span></p>
             <p class="text-muted" id="DownloadCount"><i>Downloaded <?php echo $movieData[0]["download_count"];?> times</i></p>
             <p class="text-muted"><i><?php echo $movieData[0]["update_timestamp"];?></i></p>
         </div>
 
         <!-- Synopsis-->
-        <div class="col-sm-6">
+        <div class="col-sm-4">
             <div class="text-light"><h1><?php echo $movieData[0]["title"];?></h1></div>
             <div class="text-light"><h2><?php echo $movieData[0]["year"];?></h2></div>
             <div class="text-light"><h3><?php echo $categories;?></h3></div>
@@ -39,21 +40,23 @@
             <div class="text-light"><h5>Synopsis</h5></div>
             <div><p class="text-justify text-muted"><?php echo $movieData[0]["description"];?></p></div>
         </div>
-
+        <div class="col-sm-3"></div>
     </div>
 </div>
 
-<div class="container-fluid" style="margin-top:50px">
+<br>
+
+<div class="container-fluid" style="margin-top:100px">
     <div class="row mx-auto" style="height: 400px">
 
         <div class="col-sm-1"></div>
 
         <!-- Trailer -->
-        <div class="col-sm-4 embed-responsive">
+        <div class="col-sm-3 embed-responsive">
             <iframe class="embed-responsive-item"
                     src="<?php echo $movieData[0]["media"];?>"
                     frameborder="0"
-                    style="width: 560px; height: 360px"
+                    style="width: 400px; height: 250px"
                     allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                   <!--allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"-->
             </iframe>
@@ -77,7 +80,7 @@
     </div>
 </div>
 
-<div class="container-fluid" style="margin-top:30px">
+<div class="container-fluid" >
     <div class="row">
         <div class="col-md-1"></div>
         <!-- Comment Section -->
