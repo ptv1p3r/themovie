@@ -63,15 +63,14 @@
     <!-- Upper Pagination -->
     <div class="row justify-content-center">
         <ul class="pagination">
-            <?php for ($i = 1; $i <= ceil($movieCount / 10); $i++) { ?>
+            <?php for ($i = 1; $i <= ceil($movieCount / 8); $i++) { ?>
                     <li class="page-item <?php if ($parametros[0] == $i) {
                         echo "active";
                     } else if ($parametros[0] == null && $i==1) {
                         echo "active";
                     } ?>">
                         <a href="<?php echo HOME_URI . '/search/' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
-                <?php }?>
-
+            <?php }?>
         </ul>
     </div>
 
@@ -80,7 +79,7 @@
         <table border="1" cellpadding="5" cellspacing="5" style=" width: 500px">
 
             <tr>
-                <?php if (count($moviesTable) <= 5) {
+                <?php if (count($moviesTable) <= 4) {
                     for ($i = 0; $i < count($moviesTable); $i++) { ?>
                         <td align="center">
                             <img src="<?php echo $moviesTable[$i]["poster"]; ?>" height="256" width="192">
@@ -101,14 +100,12 @@
                            <a href="<?php echo HOME_URI . '/detail/view/' . $moviesTable[$i]["movid"]; ?>">Detail</a>
                        </td>
 
-                       <?php if (($i + 1) % 5 == 0) { ?>
+                       <?php if (($i + 1) % 4 == 0) { ?>
                            </tr>
                             <tr>
                        <?php }
                    }
                 }?>
-
-
 
         </table>
     </div>
@@ -118,7 +115,7 @@
     <!-- Lower Pagination -->
     <div class="row justify-content-center">
         <ul class="pagination">
-            <?php for ($i = 1; $i <= ceil($movieCount / 10); $i++) { ?>
+            <?php for ($i = 1; $i <= ceil($movieCount / 8); $i++) { ?>
                 <li class="page-item <?php if ($parametros[0] == $i) {
                     echo "active";
                 } else if ($parametros[0] == null && $i==1) {

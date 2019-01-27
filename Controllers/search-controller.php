@@ -32,11 +32,6 @@ class SearchController extends MainController
         $movies = $modelo->getMovies();
         $movieCount = count($movies);
 
-        if ($parametros[0] == null || $parametros[0] == "") {
-            $moviesTable = $modelo->getMoviesTable(1);
-        } else {
-            $moviesTable = $modelo->getMoviesTable($modelo->$parametros[0]);
-        }
 
         foreach ($movieCategories as $category) {
             $categories  .= '<span class="dropdown-item" >'.$category['name'].'</span>';
@@ -49,6 +44,18 @@ class SearchController extends MainController
         for ($i = 0 ; $i < 9 ; $i++) {
             $ratings  .= '<span class="dropdown-item" >'.($i+1).'+</span>';
         }
+
+        if ($parametros[0] == null || $parametros[0] == "") {
+            for ($i = 0 ; $i < 8 ; $i++){
+                $moviesTable[$i] = $movies[$i];
+            }
+        } else {
+            for ($i = 0 ; $i < 8 *  $parametros[0] ; $i++){
+                $moviesTable[$i] = $movies[$i];
+            }
+        }
+
+
 
         /** Carrega os arquivos do view **/
 
