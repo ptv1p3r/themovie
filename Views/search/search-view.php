@@ -117,7 +117,7 @@
                         </div>
                         </div>
                         <div class="container-fluid">
-                        <div class="row" style="margin-bottom: 5%;">
+                        <div class="row" style="margin-bottom: 10%;">
                     <?php }
                 }
             }?>

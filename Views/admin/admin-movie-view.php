@@ -46,7 +46,6 @@
                         <th>ID</th>
                         <th>Name</th>
                         <th>Year</th>
-                        <th>Categories</th>
                         <th>Creation Date</th>
                         <th>Last Updated</th>
                         <th></th>
@@ -65,7 +64,6 @@
                             <td><?php echo $movie["movid"]?></td>
                             <td><?php echo $movie["title"]?></td>
                             <td><?php echo $movie["year"]?></td>
-                            <td><?php echo "?"?></td>
                             <td><?php echo $movie["creation_timestamp"]?></td>
                             <td><?php echo $movie["update_timestamp"]?></td>
                             <td>
