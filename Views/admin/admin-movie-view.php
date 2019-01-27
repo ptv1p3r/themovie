@@ -54,8 +54,8 @@
                             <h2>Manage <b>Movies</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-plus-circle"></i><span>Add New Movie</span></a>
-                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Movie</span></a>
+                            <a href="#addMovieModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-plus-circle"></i><span>Add New Movie</span></a>
+                            <a href="#deleteMovieModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Movie</span></a>
                         </div>
                     </div>
                 </div>
@@ -133,8 +133,8 @@
             </div>
         </div>
 
-        <!-- Edit Modal HTML -->
-        <div id="addEmployeeModal" class="modal fade">
+        <!-- Add Modal HTML -->
+        <div id="addMovieModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -152,10 +152,6 @@
                                 <input type="email" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
                                 <label>Phone</label>
                                 <input type="text" class="form-control" required>
                             </div>
@@ -170,7 +166,7 @@
         </div>
 
         <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
+        <div id="editMovieModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -206,7 +202,7 @@
         </div>
 
         <!-- Delete Modal HTML -->
-        <div id="deleteEmployeeModal" class="modal fade">
+        <div id="deleteMovieModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>

@@ -53,8 +53,7 @@
                             <h2>Manage <b>Movie Comments</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-plus-circle"></i><span>Add New Movie</span></a>
-                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Movie</span></a>
+                            <a href="#deleteCommentModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Comments</span></a>
                         </div>
                     </div>
                 </div>
@@ -86,8 +85,10 @@
                         <td><?php echo $comment["user"]?></td>
                         <td><?php echo $comment["description"]?></td>
                         <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
+                            <a href="#editCommentModal" class="edit" data-toggle="modal"
+                               data-comid="<?php echo $comment["comid"]?>" data-user="<?php echo $comment["user"]?>"
+                               data-description="<?php echo $comment["description"]?>"><i class="far fa-edit"></i></a>
+                            <a href="#deleteCommentModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>
                     </tbody>
@@ -125,43 +126,7 @@
         </div>
 
         <!-- Edit Modal HTML -->
-        <div id="addEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">
-                            <h4 class="modal-title">Add Employee</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" required>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-success" value="Add">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
+        <div id="editCommentModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
@@ -171,20 +136,16 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
+                                <label>Id</label>
+                                <input id="comid" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" required>
+                                <input id="user" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" required>
+                                <label>Description</label>
+                                <textarea id="description" class="form-control" required></textarea>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -197,7 +158,7 @@
         </div>
 
         <!-- Delete Modal HTML -->
-        <div id="deleteEmployeeModal" class="modal fade">
+        <div id="deleteCommentModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>

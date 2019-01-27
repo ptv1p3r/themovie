@@ -67,3 +67,20 @@ $(document).ready(function(){
         }
     });
 });
+
+$(document).on("click", "a", function () {
+    $("#id").val( $(this).data('id') );
+    $("#name").val($(this).data('name'));
+});
+
+$(document).on("click", "a", function () {
+    $("#comid").val( $(this).data('comid') );
+    $("#user").val($(this).data('user'));
+    $("#description").val($(this).data('description'));
+});
+
+$(document).on("click", "a", function () {
+    $("#movid").val($(this).data('movid'));
+    $("#title").val($(this).data('title'));
+    $("#year").val($(this).data('year'));
+});

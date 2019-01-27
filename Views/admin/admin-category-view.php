@@ -53,8 +53,8 @@
                             <h2>Manage <b>Movie Categories</b></h2>
                         </div>
                         <div class="col-sm-6">
-                            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-plus-circle"></i><span>Add New Movie</span></a>
-                            <a href="#deleteEmployeeModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Movie</span></a>
+                            <a href="#addCategoryModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-plus-circle"></i><span>Add New Category</span></a>
+                            <a href="#deleteCategoryModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Category</span></a>
                         </div>
                     </div>
                 </div>
@@ -86,8 +86,10 @@
                             <td><?php echo $category["catid"]?></td>
                             <td><?php echo $category["name"]?></td>
                             <td>
-                                <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="far fa-edit"></i></a>
-                                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="fas fa-trash-alt"></i></a>
+                                <a href="#editCategoryModal" class="edit" data-toggle="modal"
+                                   data-id="<?php echo $category["catid"]?>" data-name="<?php echo $category["name"]?>" ><i class="far fa-edit"></i></a>
+                                <a href="#deleteCategoryModal" class="delete" data-toggle="modal"
+                                   data-id="<?php echo $category["catid"]?>" data-name="<?php echo $category["name"]?>" ><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                         </tbody>
@@ -129,30 +131,22 @@
             </div>
         </div>
 
-        <!-- Edit Modal HTML -->
-        <div id="addEmployeeModal" class="modal fade">
+        <!-- Add Modal HTML -->
+        <div id="addCategoryModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h4 class="modal-title">Add Employee</h4>
+                            <h4 class="modal-title">Add Category</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
+                                <label>ID</label>
+                                <input type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone</label>
                                 <input type="text" class="form-control" required>
                             </div>
                         </div>
@@ -166,30 +160,22 @@
         </div>
 
         <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
+        <div id="editCategoryModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h4 class="modal-title">Edit Employee</h4>
+                            <h4 class="modal-title">Edit Category</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
+                                <label>Id</label>
+                                <input id="id" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <textarea class="form-control" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" required>
+                                <input id="name" type="text" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -202,12 +188,12 @@
         </div>
 
         <!-- Delete Modal HTML -->
-        <div id="deleteEmployeeModal" class="modal fade">
+        <div id="deleteCategoryModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h4 class="modal-title">Delete Employee</h4>
+                            <h4 class="modal-title">Delete Category</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
