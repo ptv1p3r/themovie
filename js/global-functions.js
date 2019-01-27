@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     // $('#btnSearch').click(function (){
     //     var SearchString = $('input[type=text]#Search').val();
-    //     //var movideData = new Array();
+    //     //var movideData = new Array();n
     //
     //     $.get("http://127.0.0.1/index/?path=",
     //         {
