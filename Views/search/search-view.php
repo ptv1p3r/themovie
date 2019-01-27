@@ -30,9 +30,7 @@
             <div class="dropdown">
                 <button style="width: 200px" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Genere</button>
                 <div class="dropdown-menu">
-                    <?php foreach ($movieCategories as $category) { ?>
-                        <span class="dropdown-item" ><?php echo $category["name"]?></span>
-                    <?php }?>
+                    <?php echo $categories;?>
                 </div>
             </div>
         </div>
@@ -42,9 +40,7 @@
             <div class="dropdown">
                 <button style="width: 200px" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Rating</button>
                 <div class="dropdown-menu">
-                    <?php for ($i = 0 ; $i < 5 ; $i++) { ?>
-                        <span class="dropdown-item" ><?php echo $i . " - " . ($i+1);?></span>
-                    <?php }?>
+                    <?php echo $ratings;?>
                 </div>
             </div>
         </div>
@@ -54,9 +50,7 @@
             <div class="dropdown">
                 <button style="width: 200px" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">Year</button>
                 <div class="dropdown-menu">
-                    <?php foreach ($movieYears as $year) { ?>
-                        <span class="dropdown-item" ><?php echo $year["year"]?></span>
-                    <?php }?>
+                    <?php echo $years;?>
                 </div>
             </div>
         </div>
