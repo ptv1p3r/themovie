@@ -14,20 +14,20 @@ $(document).ready(function () {
             });
     })
 
-    $('#btnSearch').click(function (){
-        var SearchString = $('input[type=text]#Search').val();
-        //var movideData = new Array();
-
-        $.get("http://127.0.0.1/index/?path=",
-            {
-                path: "search/getall/" + SearchString,
-            },
-            function(data, status){
-                var movideData = $.parseJSON(data);
-                alert("Data: " + movideData[0]['description'] + "\nStatus: " + status);
-            }
-            );
-    })
+    // $('#btnSearch').click(function (){
+    //     var SearchString = $('input[type=text]#Search').val();
+    //     //var movideData = new Array();
+    //
+    //     $.get("http://127.0.0.1/index/?path=",
+    //         {
+    //             path: "search/getall/" + SearchString,
+    //         },
+    //         function(data, status){
+    //             var movideData = $.parseJSON(data);
+    //             alert("Data: " + movideData[0]['description'] + "\nStatus: " + status);
+    //         }
+    //         );
+    // })
 
     $('img.voteOk').click(function () {
 

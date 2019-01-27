@@ -86,10 +86,11 @@ class SearchController extends MainController
         $modelo = $this->load_model('search-model');
 
         $movies = $modelo->getMovies($modelo->parametros[0]);
+        $movieCount = count($movies);
         //print_r($movies);
-        //require ABSPATH . '/views/search/search-view.php';
+        require ABSPATH . '/views/search/search-view.php';
 
-        echo json_encode($movies);
+        //echo json_encode($movies);
         //print_r($movies);
 
     }
