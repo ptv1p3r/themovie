@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
         <p class="text-muted text-center">Copyright ISMAT &copy;<?php echo date('Y');?> -
-    SIM - Pedro Roldan, Leandro Moreira, Rubén Lourenço</p>
+    SIM - Pedro Roldan, Leandro Moreira</p>
 </div>
 
 </body>
