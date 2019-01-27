@@ -32,9 +32,9 @@ class HomeModel extends MainModel{
     public function getTopRatedList($intLimit = 0) {
 
         if ($intLimit > 0){
-            $query = $this->db->query('SELECT * FROM `movies` ORDER BY movid DESC LIMIT ' . $intLimit);
+            $query = $this->db->query('SELECT * FROM `movies` ORDER BY rating_1 DESC LIMIT ' . $intLimit);
         } else {
-            $query = $this->db->query('SELECT * FROM `movies` ORDER BY movid DESC');
+            $query = $this->db->query('SELECT * FROM `movies` ORDER BY rating_1 DESC');
         }
 
         // Verifica se a consulta está OK
