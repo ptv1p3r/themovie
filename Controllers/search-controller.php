@@ -83,6 +83,9 @@ class SearchController extends MainController
         $categories = null;
         $years = null;
         $ratings = null;
+        $tt = $_GET['Search'];
+
+        print $tt;
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();

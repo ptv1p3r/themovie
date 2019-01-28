@@ -9,13 +9,13 @@
 <!-- Search -->
 <div class="container-fluid" style="margin-top:30px">
     <div class="row justify-content-center">
-        <form>
+        <form action="/search/reload" method="get">
             <div class="input-group">
                 <div class="col-auto">
                     <input style="width: 485px" type="text" class="form-control" id="Search"  name="Search" placeholder="Search">
                 </div>
                 <div class="col-auto">"
-                    <a href="<?php echo HOME_URI . '/search/reload/' . 1 ; ?>" class="btn btn-success" role="button">Search</a>
+                    <button type="submit" href="<?php echo HOME_URI . '/search/reload/' . 1 ; ?>" class="btn btn-success">Search</button>
                 </div>
             </div>
         </form>
