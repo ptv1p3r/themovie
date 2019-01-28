@@ -15,7 +15,7 @@
                     <input style="width: 485px" type="text" class="form-control" id="Search" name="Search" placeholder="Search">
                 </div>
                 <div class="col-auto">
-                    <button type="submit" href="<?php echo HOME_URI . '/search/'; ?>" id="btnSearch" class="btn btn-success">Search</button>
+                    <button type="submit" href="<?php echo HOME_URI . '/search/reload/' . 1 ; ?>" id="btnSearch" class="btn btn-success">Search</button>
                 </div>
             </div>
         </form>
