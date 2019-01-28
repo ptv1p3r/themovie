@@ -9,7 +9,7 @@
 <!-- Search -->
 <div class="container-fluid" style="margin-top:30px">
     <div class="row justify-content-center">
-        <form action="/search/reload" method="get">
+        <form action="/search/reload" method="post">
             <div class="input-group">
                 <div class="col-auto">
                     <input style="width: 485px" type="text" class="form-control" id="Search"  name="Search" placeholder="Search">
