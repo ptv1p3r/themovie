@@ -28,21 +28,12 @@
                         <div class="col-sm-6">
                             <h2>Manage <b>Movie Comments</b></h2>
                         </div>
-                        <div class="col-sm-6">
-                            <a href="#deleteCommentModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Comments</span></a>
-                        </div>
                     </div>
                 </div>
 
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
-                        <th>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-							</span>
-                        </th>
                         <th>ID</th>
                         <th>Comment</th>
                         <th>Description</th>
@@ -51,12 +42,6 @@
                     <?php foreach ($commentsTable as $comment) { ?>
                     <tbody>
                     <tr>
-                        <td align="">
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                        </td>
                         <td><?php echo $comment["comid"]?></td>
                         <td><?php echo $comment["user"]?></td>
                         <td><?php echo $comment["description"]?></td>

@@ -37,19 +37,34 @@ class AdminModel extends MainModel {
         return $query->fetchAll();
     }
 
+    public function setCategory($name){
+        $query = null;
+
+        $query = $this->db->query('SELECT Auto_increment as id FROM information_schema.tables 
+            WHERE table_name=\'categories\'');
+
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+
+        $insert = 'INSERT INTO categories (catid, name) VALUES (' . $result["id"] . ', \'' . $name . '\')';
+
+        $this->db->query($insert);
+    }
+
+    public function removeCategory($id){
+        $remove = null;
+
+        $remove = 'DELETE FROM categories WHERE catid = ' . $id;
+
+        $this->db->query($remove);
+    }
+
     /**
      * Metodo que retorna 10 categorias da BD
      * @return array
      */
-    public function getTableCategories($page = null){
+    public function getTableCategories($startNumber = null){
         $query = null;
 
-        //if ($page != null){
-        if ($page == "" || $page == "1") {
-            $startNumber = 0;
-        } else {
-            $startNumber = ($page*10)-10;
-        }
         $query = $this->db->query('SELECT * FROM `categories` limit ' . $startNumber .',10');
         //}
 
@@ -71,7 +86,6 @@ class AdminModel extends MainModel {
         if ($intMovieId != null){
             $query = $this->db->query('SELECT * FROM `movies` WHERE movid = '.$intMovieId);
         }
-
 
         // Verifica se a consulta está OK
         if ( ! $query ) {
@@ -103,16 +117,10 @@ class AdminModel extends MainModel {
      * Metodo que retorna 10 filmes existentes na BD
      * @return array
      */
-    public function getMoviesTable($page = null){
+    public function getMoviesTable($startNumber = null){
         $query = null;
 
-        if ($page == "" || $page == "1") {
-            $startNumber = 0;
-        } else {
-            $startNumber = ($page*10)-10;
-        }
         $query = $this->db->query('SELECT * FROM `movies` limit ' . $startNumber.',10');
-
 
         // Verifica se a consulta está OK
         if ( ! $query ) {
@@ -144,14 +152,9 @@ class AdminModel extends MainModel {
      * Metodo que retorna 10 comentarios existentes na BD
      * @return array
      */
-    public function getCommentsTable($page = null){
+    public function getCommentsTable($startNumber = null){
         $query = null;
 
-        if ($page == "" || $page == "1") {
-            $startNumber = 0;
-        } else {
-            $startNumber = ($page*10)-10;
-        }
         $query = $this->db->query('SELECT * FROM `comments` limit ' . $startNumber.',10');
 
 

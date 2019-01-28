@@ -42,7 +42,13 @@ class AdminController extends MainController
         $modelo = $this->load_model('admin-model');
 
         $movies = $modelo->getMovies();
-        $moviesTable = $modelo->getMoviesTable($modelo->parametros[0]);
+
+        if ($parametros[0] == "" || $parametros[0] == "1") {
+            $moviesTable = $modelo->getMoviesTable(0);
+        } else {
+            $moviesTable = $modelo->getMoviesTable(($parametros[0]*10)-10);
+        }
+
 
         $categories = $modelo->getCategories();
         $movieCategories = $modelo->getMovieCategories();
@@ -70,7 +76,12 @@ class AdminController extends MainController
         $modelo = $this->load_model('admin-model');
 
         $comments = $modelo->getComments();
-        $commentsTable = $modelo->getCommentsTable($modelo->parametros[0]);
+
+        if ($parametros[0] == "" || $parametros[0] == "1") {
+            $commentsTable = $modelo->getCommentsTable(0);
+        } else {
+            $commentsTable = $modelo->getCommentsTable(($parametros[0]*10)-10);
+        }
 
         /** Carrega os arquivos do view **/
 
@@ -93,8 +104,22 @@ class AdminController extends MainController
 
         $modelo = $this->load_model('admin-model');
 
+
+        if (isset($_POST['Name'])) {
+            $modelo->setCategory($_POST['Name']);
+        }
+
+        if (isset($_POST['id'])) {
+            $modelo->removeCategory($_POST['id']);
+        }
         $categories = $modelo->getCategories();
-        $categoriesTable = $modelo->getTableCategories($modelo->parametros[0]);
+
+        if ($parametros[0] == "" || $parametros[0] == "1") {
+            $categoriesTable = $modelo->getTableCategories(0);
+        } else {
+            $categoriesTable = $modelo->getTableCategories(($parametros[0]*10)-10);
+        }
+
 
 
         /** Carrega os arquivos do view **/

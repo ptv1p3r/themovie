@@ -29,7 +29,6 @@
                         </div>
                         <div class="col-sm-6">
                             <a href="#addMovieModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-plus-circle"></i><span>Add New Movie</span></a>
-                            <a href="#deleteMovieModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Movie</span></a>
                         </div>
                     </div>
                 </div>
@@ -37,12 +36,6 @@
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
-                        <th>
-							<span class="custom-checkbox">
-								<input type="checkbox" id="selectAll">
-								<label for="selectAll"></label>
-							</span>
-                        </th>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Year</th>
@@ -55,12 +48,6 @@
                     <?php foreach ($moviesTable as $movie) { ?>
                         <tbody>
                         <tr>
-                            <td align="">
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
                             <td><?php echo $movie["movid"]?></td>
                             <td><?php echo $movie["title"]?></td>
                             <td><?php echo $movie["year"]?></td>

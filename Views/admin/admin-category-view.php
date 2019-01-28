@@ -29,7 +29,6 @@
                         </div>
                         <div class="col-sm-6">
                             <a href="#addCategoryModal" class="btn btn-success" data-toggle="modal"><i class="fas fa-plus-circle"></i><span>Add New Category</span></a>
-                            <a href="#deleteCategoryModal" class="btn btn-danger" data-toggle="modal"><i class="fas fa-minus-circle"></i><span>Delete Category</span></a>
                         </div>
                     </div>
                 </div>
@@ -37,13 +36,7 @@
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
-                        <th>
-                            <span class="custom-checkbox">
-                                <input type="checkbox" id="selectAll">
-                                <label for="selectAll"></label>
-                            </span>
-                        </th>
-                        <th>Category ID</th>
+                        <th>ID</th>
                         <th>Name</th>
                         <th align="right"></th>
                     </tr>
@@ -52,12 +45,6 @@
                     <?php foreach ($categoriesTable as $category) { ?>
                         <tbody>
                         <tr>
-                            <td align="">
-                                <span class="custom-checkbox">
-                                    <input type="checkbox" id="checkbox1" name="options[]" value="1">
-                                    <label for="checkbox1"></label>
-                                </span>
-                            </td>
                             <td><?php echo $category["catid"]?></td>
                             <td><?php echo $category["name"]?></td>
                             <td>
@@ -111,19 +98,15 @@
         <div id="addCategoryModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form action="/admin/category/1" method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Add Category</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>ID</label>
-                                <input type="text" class="form-control" disabled>
-                            </div>
-                            <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" class="form-control" required>
+                                <input id="Name" name="Name" type="text" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -140,6 +123,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form>
+<!--                        <form action="/admin/category/1" method="post">-->
                         <div class="modal-header">
                             <h4 class="modal-title">Edit Category</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -167,13 +151,13 @@
         <div id="deleteCategoryModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form action="/admin/category/1" method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Delete Category</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <p>Are you sure you want to delete these Records?</p>
+                            <p>Are you sure you want to delete this category?</p>
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
                         </div>
                         <div class="modal-footer">
