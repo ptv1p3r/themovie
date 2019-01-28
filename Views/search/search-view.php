@@ -12,10 +12,10 @@
         <form>
             <div class="input-group">
                 <div class="col-auto">
-                    <input style="width: 485px" type="text" class="form-control" id="Search" name="Search" placeholder="Search">
+                    <input style="width: 485px" type="text" class="form-control" id="Search"  name="Search" placeholder="Search">
                 </div>
-                <div class="col-auto">
-                    <button type="submit" href="<?php echo HOME_URI . '/search/reload/' . 1 ; ?>" id="btnSearch" class="btn btn-success">Search</button>
+                <div class="col-auto">"
+                    <a href="<?php echo HOME_URI . '/search/reload/' . 1 ; ?>" class="btn btn-success" role="button">Search</a>
                 </div>
             </div>
         </form>
