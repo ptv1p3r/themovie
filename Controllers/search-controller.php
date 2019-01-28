@@ -83,9 +83,7 @@ class SearchController extends MainController
         $categories = null;
         $years = null;
         $ratings = null;
-        $tt = $_POST['Search']; // aqui
 
-        print $tt;
 
         // Parametros da função
         $parametros = ( func_num_args() >= 1 ) ? func_get_arg(0) : array();
@@ -94,7 +92,7 @@ class SearchController extends MainController
 
         $movieCategories = $modelo->getCategories();
         $movieYears = $modelo->getYears();
-        $movies = $modelo->getMovies($modelo->$parametros[1]);
+        $movies = $modelo->getMovies($_GET['Search']);
         $movieCount = count($movies);
 
 
