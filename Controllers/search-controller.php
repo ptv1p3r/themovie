@@ -83,7 +83,7 @@ class SearchController extends MainController
         $categories = null;
         $years = null;
         $ratings = null;
-        $tt = $_GET['Search'];
+        $tt = $_GET['Search']; // aqui
 
         print $tt;
 
