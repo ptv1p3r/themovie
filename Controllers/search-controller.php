@@ -78,7 +78,7 @@ class SearchController extends MainController
     }
 
     public function reload() {
-        // Título da página
+        // Título da páginas
         $this->title = 'Search';
         $categories = null;
         $years = null;
