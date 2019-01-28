@@ -6,6 +6,8 @@
  * Time: 14:09
  */
 ?>
+<?php if ( ! defined('ABSPATH')) exit; ?>
+
 <!-- Search -->
 <div class="container-fluid" style="margin-top:30px">
     <div class="row justify-content-center">
@@ -14,7 +16,7 @@
                 <div class="col-auto">
                     <input style="width: 485px" type="text" class="form-control" id="Search"  name="Search" placeholder="Search">
                 </div>
-                <div class="col-auto">"
+                <div class="col-auto">
                     <button type="submit" href="<?php echo HOME_URI . '/search/reload/' . 1 ; ?>" class="btn btn-success">Search</button>
                 </div>
             </div>

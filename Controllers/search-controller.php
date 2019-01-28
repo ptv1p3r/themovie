@@ -92,7 +92,7 @@ class SearchController extends MainController
 
         $movieCategories = $modelo->getCategories();
         $movieYears = $modelo->getYears();
-        $movies = $modelo->getMovies($_GET['Search']);
+        $movies = $modelo->getMovies($_POST['Search']);
         $movieCount = count($movies);
 
 
