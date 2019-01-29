@@ -31,7 +31,7 @@ class SearchModel extends MainModel
         $query = null;
 
 
-        $query = $this->db->query('SELECT `name` FROM `categories` ');
+        $query = $this->db->query('SELECT * FROM `categories` ');
 
 
         // Verifica se a consulta está OK
@@ -50,7 +50,7 @@ class SearchModel extends MainModel
         $query = null;
 
 
-        $query = $this->db->query('SELECT DISTINCT(year) as year FROM `movies` ORDER BY year ASC');
+        $query = $this->db->query('SELECT DISTINCT(year) as year FROM `movies` ORDER BY year DESC ');
 
 
         // Verifica se a consulta está OK
@@ -73,6 +73,45 @@ class SearchModel extends MainModel
         } else {
             $query = $this->db->query('SELECT * FROM `movies` WHERE title LIKE \'%'.$strSearchData.'%\' ');
         }
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    public function getMoviesByYear($year = null){
+        $query = null;
+
+        $query = $this->db->query('SELECT * FROM `movies` WHERE year = '.$year.' ');
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    public function getMoviesByRating($rating = null){
+        $query = null;
+
+        $query = $this->db->query('SELECT * FROM `movies` WHERE rating_1 > '.$rating.' ');
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
+    public function getMoviesCategoriesById($catid = null){
+        $query = null;
+
+        $query = $this->db->query('SELECT `movid` FROM `movies_categories` WHERE catid = '.$catid.' ');
 
         // Verifica se a consulta está OK
         if ( ! $query ) {

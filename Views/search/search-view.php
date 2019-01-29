@@ -68,12 +68,12 @@
     <div class="row justify-content-center">
         <ul class="pagination">
             <?php for ($i = 1; $i <= ceil($movieCount / 8); $i++) { ?>
-                    <li class="page-item <?php if ($parametros[0] == $i) {
+                    <li class="page-item <?php if ($urlContent[1] == $i) {
                         echo "active";
-                    } else if ($parametros[0] == null && $i==1) {
+                    } else if ($urlContent[1] == null && $i==1) {
                         echo "active";
                     } ?>">
-                        <a href="<?php echo HOME_URI . '/search/index/' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
+                        <a href="<?php echo HOME_URI . '/search/'. $page .'_' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
             <?php }?>
         </ul>
     </div>
@@ -84,8 +84,8 @@
     <!-- Movies -->
     <div class="container-fluid">
         <div class="row " style="margin-bottom: 10%">
-            <?php if (count($movies) <= 4) {
-                for ($i = 0; $i < count($movies); $i++) { ?>
+            <?php if ($movieCount <= 4) {
+                for ($i = 0; $i < $movieCount; $i++) { ?>
                     <div class="card" style="margin:10px auto;width: 200px;height: 300px">
                         <a href="<?php echo HOME_URI . '/detail/view/' . $movies[$i]["movid"]; ?>">
                             <img class="card-img-top" src="<?php echo $movies[$i]["poster"]; ?>"
@@ -126,16 +126,18 @@
         </div>
     </div>
 
-    <!-- Upper Pagination -->
+    <br>
+
+    <!-- Lower Pagination -->
     <div class="row justify-content-center">
         <ul class="pagination">
             <?php for ($i = 1; $i <= ceil($movieCount / 8); $i++) { ?>
-                <li class="page-item <?php if ($parametros[0] == $i) {
+                <li class="page-item <?php if ($urlContent[1] == $i) {
                     echo "active";
-                } else if ($parametros[0] == null && $i==1) {
+                } else if ($urlContent[1] == null && $i==1) {
                     echo "active";
                 } ?>">
-                    <a href="<?php echo HOME_URI . '/search/index/' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
+                    <a href="<?php echo HOME_URI . '/search/'. $page .'_' . $i; ?>" class="page-link"><?php echo $i ?></a></li>
             <?php }?>
         </ul>
     </div>
