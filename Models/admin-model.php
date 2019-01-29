@@ -20,6 +20,20 @@ class AdminModel extends MainModel {
         $this->parametros = $this->controller->parametros; // Configura os parâmetros
     }
 
+    public function validateUser($username, $password){
+        $query = null;
+
+        $query = $this->db->query('SELECT * FROM login WHERE username=\'' . $username . '\' 
+                                                          AND password=\'' . $password . '\'');
+
+        // Verifica se a consulta está OK
+        if ( ! $query ) {
+            return array();
+        }
+        // Preenche a tabela com os dados
+        return $query->fetchAll();
+    }
+
     /**
      * Metodo que retorna todas as categorias Existentes na BD
      * @return array
