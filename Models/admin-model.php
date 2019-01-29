@@ -50,11 +50,22 @@ class AdminModel extends MainModel {
         $this->db->query($insert);
     }
 
+    public function updateCategory($id, $name){
+        $update = null;
+
+        $update = 'UPDATE categories SET name=\'' . $name . '\' WHERE catid = ' . $id ;
+
+        $this->db->query($update);
+    }
+
+
     public function removeCategory($id){
         $remove = null;
 
         $remove = 'DELETE FROM categories WHERE catid = ' . $id;
+        $this->db->query($remove);
 
+        $remove = 'DELETE FROM movies_categories WHERE catid = ' . $id;
         $this->db->query($remove);
     }
 

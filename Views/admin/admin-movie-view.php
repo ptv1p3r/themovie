@@ -109,10 +109,6 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>Movie</label>
-                                <input type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
                                 <label>Title</label>
                                 <input type="text" class="form-control" required>
                             </div>
@@ -152,45 +148,40 @@
         <div id="editMovieModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form action="/admin/movie/1" method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Edit Movie</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>Movie</label>
-                                <input id="movid" type="text" class="form-control" value="<?php $movieById[0]["movid"]?>" disabled>
+                                <input id="movid" type="hidden" class="form-control" value="<?php $movieById[0]["movid"]?>">
                             </div>
                             <div class="form-group">
                                 <label>Title</label>
-                                <input id="title" type="text" class="form-control" required>
+                                <input id="title" name="title" type="text" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label>Year</label>
-                                <input id="year" type="number" class="form-control" required>
+                                <input id="year" name="year" type="number" class="form-control" required>
                             </div>
                             <label>Categories</label>   <!-- fill categories -->
                             <div class="form-group" style="padding-left: 40px" >
-                                <?php foreach ( $categories as $category) {?>
+                                <?php
+                                $i=1;
+                                foreach ( $categories as $category) {?>
 
                                     <div class="form-check form-check-inline col-md-3">
                                         <input class="form-check-input" type="checkbox" id="<?php echo $category["catid"]?>"
-                                            <?php foreach ($movieCategories as $movCat) {
-                                                if ($movCat["catid"] == $category["catid"]){
-//                                                    if ($movCat["catid"] == $_POST["movid"]) {?>
-<!--                                                        checked-->
-<!--                                                    --><?php //}
-                                                }
-                                            }?>
                                         <label class="form-check-label" for="<?php echo $category["catid"]?>"><?php echo $category["name"]?></label>
                                     </div>
 
-                                    <?php if($category["catid"] % 3 == 0) { ?>
-                                    </div>
-                                    <div class="form-group" style="padding-left: 40px">
+                                    <?php if($i % 3 == 0) { ?>
+                                        </div>
+                                        <div class="form-group" style="padding-left: 40px">
                                     <?php } ?>
-                                <?php }?>
+                                <?php $i++;
+                                }?>
 
                             </div>
 
@@ -208,14 +199,15 @@
         <div id="deleteMovieModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
+                    <form action="/admin/movie/1" method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Delete Movie</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
-                            <p>Are you sure you want to delete these Records?</p>
+                            <p>Are you sure you want to delete this Movie?</p>
                             <p class="text-warning"><small>This action cannot be undone.</small></p>
+                            <input id="movid" name="movid" type="hidden" class="form-control">
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">

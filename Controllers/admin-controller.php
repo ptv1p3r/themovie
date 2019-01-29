@@ -28,7 +28,7 @@ class AdminController extends MainController
 
         require ABSPATH . '/views/admin/admin-view.php';
 
-        require ABSPATH . '/views/_includes/footer.php';
+        require ABSPATH . '/views/_includes/admin-footer.php';
 
     }
 
@@ -62,7 +62,7 @@ class AdminController extends MainController
 
         require ABSPATH . '/views/admin/admin-movie-view.php';
 
-        require ABSPATH . '/views/_includes/footer.php';
+        require ABSPATH . '/views/_includes/admin-footer.php';
 
     }
 
@@ -89,7 +89,7 @@ class AdminController extends MainController
 
         require ABSPATH . '/views/admin/admin-comment-view.php';
 
-        require ABSPATH . '/views/_includes/footer.php';
+        require ABSPATH . '/views/_includes/admin-footer.php';
 
     }
 
@@ -105,13 +105,18 @@ class AdminController extends MainController
         $modelo = $this->load_model('admin-model');
 
 
-        if (isset($_POST['Name'])) {
-            $modelo->setCategory($_POST['Name']);
+        if (isset($_POST['nameToAdd'])) {
+            $modelo->setCategory($_POST['nameToAdd']);
         }
 
-        if (isset($_POST['id'])) {
+        if (isset($_POST['id']) && isset($_POST['name'])) {
+            $modelo->updateCategory($_POST["id"], $_POST['name']);
+        }
+
+        if (isset($_POST['id']) && !isset($_POST['name'])) {
             $modelo->removeCategory($_POST['id']);
         }
+
         $categories = $modelo->getCategories();
 
         if ($parametros[0] == "" || $parametros[0] == "1") {
@@ -128,7 +133,7 @@ class AdminController extends MainController
 
         require ABSPATH . '/views/admin/admin-category-view.php';
 
-        require ABSPATH . '/views/_includes/footer.php';
+        require ABSPATH . '/views/_includes/admin-footer.php';
 
     }
 
@@ -147,7 +152,7 @@ class AdminController extends MainController
 
         require ABSPATH . '/views/admin/admin-settings-view.php';
 
-        require ABSPATH . '/views/_includes/footer.php';
+        require ABSPATH . '/views/_includes/admin-footer.php';
 
     }
 

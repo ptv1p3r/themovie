@@ -50,6 +50,7 @@
                             <td>
                                 <a href="#editCategoryModal" class="edit" data-toggle="modal"
                                    data-id="<?php echo $category["catid"]?>" data-name="<?php echo $category["name"]?>" ><i class="far fa-edit"></i></a>
+
                                 <a href="#deleteCategoryModal" class="delete" data-toggle="modal"
                                    data-id="<?php echo $category["catid"]?>" data-name="<?php echo $category["name"]?>" ><i class="fas fa-trash-alt"></i></a>
                             </td>
@@ -106,7 +107,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input id="Name" name="Name" type="text" class="form-control" required>
+                                <input id="nameToAdd" name="nameToAdd" type="text" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -122,20 +123,16 @@
         <div id="editCategoryModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form>
-<!--                        <form action="/admin/category/1" method="post">-->
+                    <form action="/admin/category/1" method="post">
                         <div class="modal-header">
                             <h4 class="modal-title">Edit Category</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>Id</label>
-                                <input id="id" type="text" class="form-control" disabled>
-                            </div>
-                            <div class="form-group">
+                                <input id="id" name="id" type="hidden" class="form-control">
                                 <label>Name</label>
-                                <input id="name" type="text" class="form-control" required>
+                                <input id="name" name="name" type="text" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer">
