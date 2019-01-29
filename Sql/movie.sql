@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 28-Jan-2019 às 00:41
--- Versão do servidor: 10.1.37-MariaDB
--- versão do PHP: 7.3.0
+-- Generation Time: Jan 29, 2019 at 06:56 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -34,7 +34,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`catid`, `name`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `categories` (`catid`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `comments`
+-- Table structure for table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -70,7 +70,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `comments`
+-- Dumping data for table `comments`
 --
 
 INSERT INTO `comments` (`comid`, `user`, `description`, `creation_timestamp`) VALUES
@@ -95,7 +95,25 @@ INSERT INTO `comments` (`comid`, `user`, `description`, `creation_timestamp`) VA
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `movies`
+-- Table structure for table `login`
+--
+
+CREATE TABLE `login` (
+  `username` varchar(200) NOT NULL,
+  `password` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `login`
+--
+
+INSERT INTO `login` (`username`, `password`) VALUES
+('admin', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movies`
 --
 
 CREATE TABLE `movies` (
@@ -120,7 +138,7 @@ CREATE TABLE `movies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `movies`
+-- Dumping data for table `movies`
 --
 
 INSERT INTO `movies` (`movid`, `title`, `year`, `description`, `rating_1`, `rating_2`, `rating_3`, `rating_4`, `media`, `poster`, `image_1`, `image_2`, `vote_ok`, `vote_notok`, `download_count`, `download_link`, `creation_timestamp`, `update_timestamp`) VALUES
@@ -143,7 +161,7 @@ INSERT INTO `movies` (`movid`, `title`, `year`, `description`, `rating_1`, `rati
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `movies_categories`
+-- Table structure for table `movies_categories`
 --
 
 CREATE TABLE `movies_categories` (
@@ -153,7 +171,7 @@ CREATE TABLE `movies_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `movies_categories`
+-- Dumping data for table `movies_categories`
 --
 
 INSERT INTO `movies_categories` (`intid`, `movid`, `catid`) VALUES
@@ -197,7 +215,7 @@ INSERT INTO `movies_categories` (`intid`, `movid`, `catid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `movies_comments`
+-- Table structure for table `movies_comments`
 --
 
 CREATE TABLE `movies_comments` (
@@ -207,7 +225,7 @@ CREATE TABLE `movies_comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Extraindo dados da tabela `movies_comments`
+-- Dumping data for table `movies_comments`
 --
 
 INSERT INTO `movies_comments` (`intid`, `movid`, `comid`) VALUES
@@ -244,6 +262,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`comid`);
+
+--
+-- Indexes for table `login`
+--
+ALTER TABLE `login`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `movies`
