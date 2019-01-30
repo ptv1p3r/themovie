@@ -63,7 +63,6 @@ class AdminController extends MainController
                         $this->movie(1);
                     }
                 } else {
-                    echo "Invalid username or password!";
                     $_POST['validation'] = "failed";
 
                     $this->index();
